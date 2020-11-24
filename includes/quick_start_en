@@ -6,7 +6,7 @@
 <p>After successfully creating the API key, please do remember the following information：</p>
 
 <ul>
-<li><p><code>Access Key</code> The encrypted key that allows you to gain access to your API</p></li>
+<li><p><code>API Key</code> The encrypted key that allows you to gain access to your API</p></li>
 <li><p><code>Secret Key</code> The encrypted key used by the encryption process of signature verification (only visible during application process)</p></li>
 </ul>
 
