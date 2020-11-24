@@ -1,0 +1,94 @@
+<h1 id='access-instruction'>Access Instruction</h1><h2 id='brief-introduction-of-interface'>Brief Introduction of Interface</h2>
+<table><thead>
+<tr>
+<th>Type of Interface</th>
+<th>Link To Different Types of Interface</th>
+<th>Introduction</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>System Type</td>
+<td>/api/v2/server.time</td>
+<td>Basic Types of Interface</td>
+</tr>
+<tr>
+<td>Order Type</td>
+<td>/api/v2/order.*</td>
+<td>Order type of interface, which include order placement, order cancellation, order inquiry and order settlement etc.</td>
+</tr>
+<tr>
+<td>Market Type</td>
+<td>/api/v2/market.*</td>
+<td>Public market type of interface, which include market settlement, market depth, market trends etc.</td>
+</tr>
+<tr>
+<td>Asset Type</td>
+<td>/api/v2/balance.*</td>
+<td>Asset type of interface, which include records of changes in asset volumes and user assets.</td>
+</tr>
+</tbody></table>
+
+<p>This category only follows a general rules of classification. Please be aware that part of the interfaces do not follow this category. Please check relevant interface files according to actual situations and requirements.</p>
+<h2 id='rules-and-regulations-regarding-the-limit-on-the-frequencies-of-interface-call'>Rules And Regulations Regarding The Limit On The Frequencies Of Interface Call</h2>
+<ul>
+<li>The system only allows each API Key to conduct no more than 10 interface calls within each second.</li>
+<li>If the interface does not require API Ley, then each IP address is allowed to conduct no more than 10 interface calls within each second.</li>
+</ul>
+
+<p>For Example:</p>
+
+<ul>
+<li>According to the limit on the frequencies of interface call, asset or order type of interfaces are only allowed to conduct no more than 10 times of interface calls within each second.</li>
+<li>According to the limit on the frequencies of interface call, each IP address is allowed to conduct no more than 10 interface calls within each second.</li>
+</ul>
+<h2 id='request-format'>Request Format</h2>
+<p>All API requests are restful，currently, there are only two formats：GET and POST</p>
+
+<ul>
+<li>GET Request：All parameters are included in the path parameter.</li>
+<li>POST Request，All parameters are sent in the request body in JSON format.</li>
+</ul>
+<h2 id='return-format'>Return Format</h2>
+<p>The format of all interfaces are in JSON format. There are three fields on the upmost layer of JSON: error, result, id， with the actual data of business included in &quot;result&quot; field.</p>
+
+<p>Please refer to the example of return format below：</p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error</td>
+<td>Object</td>
+<td>API returned incorrect content，when API returns correct content, it displayed as &quot;null&quot;</td>
+</tr>
+<tr>
+<td>result</td>
+<td>Object</td>
+<td>The interface returned data body,when the result is incorrect, it displayed as &quot;null&quot;</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>Request id</td>
+</tr>
+</tbody></table>
+<h2 id='error-information'>Error Information</h2><h3 id='api-error-information'>API Error Information</h3>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invalid argument</td>
+<td>Incorrect Parameter</td>
+</tr>
+</tbody></table>
+<h2 id='recommendations'>Recommendations</h2>
+<p>1、For data information of market type, it is recommended to use WebSocket to receive real time data and conduct cache operation on data received.</p>
+
+<p>2、For retrieving latest market price, it is recommended to use market.deals interface or subscribe deals.subscribe by using WebSocket.</p>

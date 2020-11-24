@@ -1,0 +1,1489 @@
+<h1 id='c8e5ca7201'>交易数据</h1><h2 id='f1d7bc2a3a'>限价交易</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.put_limit</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户申请的API KEY</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>请求字符串的签名值。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称</td>
+<td>，如：&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+<td>0，1</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td>数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td>交易价格。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>&lt;!-- isfee</td>
+<td>是</td>
+<td>Integer</td>
+<td>是否使用折扣币抵扣0 = &quot;否(no)&quot;，1=&quot;是(yes)&quot;</td>
+<td>0，1 --&gt;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>source</td>
+<td>是</td>
+<td>string</td>
+<td>数据请求来源标识</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>string</td>
+<td>下单类型 1-限价单</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>user</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单创建时间(秒)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单更新时间(秒)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>string</td>
+<td>#订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>是</td>
+<td>string</td>
+<td>#抵扣币名</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>是</td>
+<td>double</td>
+<td>#抵扣币的折扣</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>是</td>
+<td>double</td>
+<td>#折扣抵扣的数量</td>
+</tr>
+</tbody></table>
+<h2 id='c21d397297'>取消交易</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.cancel</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，</td>
+<td>&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;..</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>要取消交易的id.</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>source</td>
+<td>是</td>
+<td>string</td>
+<td>数据请求来源标识</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>string</td>
+<td>下单类型 1-限价单</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>user</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单创建时间(秒)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单更新时间(秒)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>string</td>
+<td>#订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>是</td>
+<td>string</td>
+<td>#抵扣币名</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>是</td>
+<td>double</td>
+<td>#抵扣币的折扣</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>是</td>
+<td>double</td>
+<td>#折扣抵扣的数量</td>
+</tr>
+</tbody></table>
+<h2 id='b47e495169'>批量取消交易</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.batch_cancel</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，</td>
+<td>&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;....</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>是</td>
+<td>arrary</td>
+<td>要取消交易的id(无符号64位)</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>source</td>
+<td>是</td>
+<td>string</td>
+<td>数据请求来源标识</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>string</td>
+<td>下单类型 1-限价单</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>user</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单创建时间(秒)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单更新时间(秒)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>string</td>
+<td>#订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>是</td>
+<td>string</td>
+<td>#抵扣币名</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>是</td>
+<td>double</td>
+<td>#抵扣币的折扣</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>是</td>
+<td>double</td>
+<td>#折扣抵扣的数量</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+     数量最多10个订单取消
+</aside>
+<h2 id='de76eb2582'>获取已成交的订单细节</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.deals</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>等于0，表示从最近一次交易往之前查找</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>交易ID，参看 &quot;order.put_limit&quot;方法的返回结果</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>最多返回 &quot;records&quot;的数量</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>source</td>
+<td>是</td>
+<td>string</td>
+<td>数据请求来源标识</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>string</td>
+<td>下单类型 1-限价单</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>user</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单创建时间(秒)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单更新时间(秒)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>string</td>
+<td>#订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>是</td>
+<td>string</td>
+<td>#抵扣币名</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>是</td>
+<td>double</td>
+<td>#抵扣币的折扣</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>是</td>
+<td>double</td>
+<td>#折扣抵扣的数量</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+
+
+
+ -->
+<h2 id='aeb056142b'>根据订单号查询已完成订单</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.finished_detail</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>等于0，表示从最近一次交易往之前查找</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>交易ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>source</td>
+<td>是</td>
+<td>string</td>
+<td>数据请求来源标识</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>string</td>
+<td>下单类型 1-限价单</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>user</td>
+<td>是</td>
+<td>Integer</td>
+<td>买卖方标识 1-卖方，2-买方</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单创建时间(秒)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>是</td>
+<td>double</td>
+<td>#订单更新时间(秒)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>是</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>string</td>
+<td>#订单状态标志 当与0x8为真的时候表示当前订单是取消的,当与0x80为真的时候表示当前订单是使用抵扣折扣的</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>是</td>
+<td>string</td>
+<td>#抵扣币名</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>是</td>
+<td>double</td>
+<td>#抵扣币的折扣</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>是</td>
+<td>double</td>
+<td>#折扣抵扣的数量</td>
+</tr>
+</tbody></table>
+
+<!-- 
+  
+ -->
+<h2 id='535134f32a'>获取交易列表</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.book</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>string</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>偏移位置</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>最多返回 &quot;records&quot;的数量</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169117</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td></td>
+</tr>
+<tr>
+<td>orders</td>
+<td>是</td>
+<td>array</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+   offset — ，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推.....
+</aside></p>
+
+<!-- 
+  
+ -->
+<h2 id='331c0949ab'>获取交易深度</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.depth</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>是</td>
+<td>string</td>
+<td>价格精度</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>最多返回 &quot;records&quot;的数量</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"0.0733858"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.319"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0741178"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.252"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0742609"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">],</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.1250465"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.272"</span><span class="p">]],</span><span class="w"> 
+      </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"0.0730197"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.275"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0723"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.052"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0722876"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.302"</span><span class="p">],</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.0e-7"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1"</span><span class="p">]]},</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1527559250</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<aside class="notice">
+   interval — 可取值：0，0.1，0.01，0.001，……，0.0000000001
+</aside>
+
+<!-- 
+  
+
+
+ -->
+<h2 id='52c04a4b6e'>查询未实施订单</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.pending</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>偏移位置</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>最多返回 &quot;records&quot;的数量</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"ETHBTC"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"limit"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offset"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"records"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+                    </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+                    </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+                    </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+                    </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+                    </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1526971756</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(无符号64位）</td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td></td>
+</tr>
+<tr>
+<td>records</td>
+<td>是</td>
+<td>array</td>
+<td>参考order.put_limit</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+
+
+ -->
+<h2 id='3ce6ebf186'>查询用户的已完成订单</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.finished</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>是</td>
+<td>string</td>
+<td>用户API KEY</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>是</td>
+<td>string</td>
+<td>用户签名值</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，</td>
+<td>&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;...</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>是</td>
+<td>开始时间(秒)</td>
+<td>开始时间(秒).</td>
+<td>1525067600 时间戳</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>是</td>
+<td>截止时间(秒)</td>
+<td>结束时间(秒)。</td>
+<td>1525067600 时间戳</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>偏移位置，如果设置为0，表示从最新近一笔业务开始算起，往之前时间的所有交易记录，总笔数不能大于limit；。如果设置为1，表示从次新一笔业务开始算起，往之前时间的所有交易记录总笔数不能大于limit；以此类推</td>
+<td>0,1,2,3</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>最多返回 &quot;records&quot;的数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>side</td>
+<td>是</td>
+<td>Integer</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+<td>1,2</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393490</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>records</td>
+<td>是</td>
+<td>array</td>
+<td>参考order.put_limit</td>
+</tr>
+</tbody></table>
+
+<p>&lt;!-- </p>

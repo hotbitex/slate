@@ -1,0 +1,103 @@
+<h1 id='system-interface'>System Interface</h1><h2 id='send-heartbeat'>Send Heartbeat</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"server.ping"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"pong"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: server.ping</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data'>Response Data</h3>
+<p>No</p>
+<h2 id='retrieve-system-time'>Retrieve System Time</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"server.time"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="mi">1511941406</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: system.time</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter-2'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data-2'>Response Data</h3>
+<p>Server Time</p>
+<h2 id='user-verification'>User Verification</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"server.auth"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="err">api_key</span><span class="p">,</span><span class="err">sign</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: server.auth</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-3'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type of Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>String</td>
+<td>Yes</td>
+<td>User&#39;s api_key</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>String</td>
+<td>Yes</td>
+<td>Signature Value</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-3'>Response Data</h3>
+<p>Successful or not </p>

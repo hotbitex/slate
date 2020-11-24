@@ -1,0 +1,38 @@
+<h1 id='introduction'>Introduction</h1><h2 id='api-introduction'>API Introduction</h2>
+<p>Welcome to use HotBit API！</p>
+
+<p>This file serves as the only official file of Hotbit API. All API interfaces provided by Hotbit will be continuously updated here. Please follow us frequently.</p>
+
+<p>You may switch and obtain the API of different businesses by clicking the menu above. You may also switch the language of the file by clicking the language button on top right corner.</p>
+
+<p>The examples regarding the requested parameters and response results are listed on the right hand side of the file.</p>
+
+<!-- ## Projects With Market Making -->
+
+<!-- 
+We sincerely welcome our users with excellent maker strategies and huge trading volumes to participate in our long-term market maker plan. If the balance of your Hotbit spot trading account or contract trading account worthes more than 10 BTC (which refers to the total volume of assets in either your spot trading or contract trading account, and not the total volume of assets of all your Hotbit accounts), please email the following information to:
+
+* <coderforart+2333@gmail.com> HotBit Global（Spot Trading / Leverage）Market Maker Application；
+* <coderforart+2333@gmail.com> HBDM（Contract）Market Maker Application。 -->
+
+<p>&lt;!-- 1. Provide your UID （The UID must not be involved in any commission return）；
+2. Provide the snapshots as proofs of maker trading volumes on other trading platforms (for example, 30-day trading volumes or VIP level etc.);
+3. Please briefly state your method of market making with no details required. --&gt;.</p>
+
+<!-- <aside class="notice">
+The market maker plan does not support any relevant types of events such as reward point deduction, VIP or trading volume competition etc.
+</aside>
+ -->
+<h2 id='update-subscription'>Update Subscription</h2>
+<p>Hotbit will publish relevant announcement in advance regarding the adding, update and delisting of any API. It is recommended that you pay attention to and subscribe to our announcement for all latest information.</p>
+
+<p>You may click here <a href="https://www.hotbit.io/">here</a> to subscribe to our announcement.</p>
+
+<p>The process of subscription is: Click the &quot;Follow&quot; button on the top right corner of &quot;API Announcement&quot; and login with your account, then click &quot;follow&quot; button again and choose the type of content you intend to follow. By clicking the button, the word displayed on the button will be changed to &quot;following&quot;, which means that you have subscribed the content(s) successfully. If you do not have an account, click the &quot;register&quot; button at the bottom left corner and finish the registration process.</p>
+<h2 id='contact-us'>Contact Us</h2>
+<p>If you encounter any problems or that you have any ideas or suggestions regarding our API services, you may contact us via any of the following channels:   </p>
+
+<ul>
+<li>Join our Telegram channel: https://t.me/Hotbit_English</li>
+<li>Send your email to: business@hotbit.io。</li>
+</ul>

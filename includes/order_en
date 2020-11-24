@@ -1,0 +1,1454 @@
+<h1 id='transaction-data'>Transaction Data</h1><h2 id='limit-order-transaction'>Limit Order Transaction</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.put_limit</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>The API KEY applied by the user</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>The signature value of the requested string</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading amount</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Price</td>
+</tr>
+<tr>
+<td>&lt;!-- isfee</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>apply the discount of discount tokens or not 0 = &quot;No(no)&quot;，1=&quot;Yes(yes)&quot; --&gt;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Yes</td>
+<td>string</td>
+<td>The identifier of data request source</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Order placement type 1-limit order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier of buyer and seller 1-seller, 2-buyer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>Identifier of buyer and seller 1-buyer，2-seller</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order creation(second)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order update(second)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Identifier of order status   When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys the discount.</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Name of Discount Token</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The discount of discount token</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Volume deducted from the discount</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-transaction'>Cancel Transaction</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.cancel</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s signature value</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>id that requires the cancellation of transaction</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+      </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier on source of data request</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Order placement type 1-limit order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier of buyer and seller 1-Seller，2-Buyer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>Identifier of buyer and seller 1-Seller，2-Buyer</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order creation(second)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order update(second)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Name of Discount Token</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Discount Applied to the Discount Token</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>Yes</td>
+<td>string</td>
+<td>#he Volume Deducted as Discount</td>
+</tr>
+</tbody></table>
+<h2 id='batch-cancellation-of-orders'>Batch Cancellation of Orders</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.batch_cancel</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>The id that requires the cancellation of orders (No Symbol 64 Digit)</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier on source of data request</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Order placement type 1-limit order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier of buyer and seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>Identifier of buyer and seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order creation(second)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order update(second)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Name of Discount Token</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The discount applied to the discount token</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The volume deducted as discount</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+     Only a maximum of 10 orders are allowed to be cancelled
+</aside>
+<h2 id='retrieve-the-details-of-settled-orders'>Retrieve The Details of Settled Orders</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.deals</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Equals to 0, which means search from the latest transaction to previous transactions.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Transaction ID，refer to the returned result of &quot;order.put_limit&quot; method</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>The maximum volume of &quot;records&quot; allowed to be returned</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier on source of data request</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Order placement type 1-limit order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier on buyer and seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>Identifier on buyer or seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order creation(second)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order update(second)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Name of discount token</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The discount applied to the discount token</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The volume deducted as discount</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+
+
+
+ -->
+<h2 id='inquiry-on-settled-orders-according-to-order-number'>Inquiry On Settled Orders According To Order Number</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.finished_detail</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Equals to 0, which means search from the latest transaction to previous transactions</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Transaction ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+   </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>order-ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Yes</td>
+<td>string</td>
+<td>The identifier on the source of data request</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Order placement type 1-limit order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>Identifier of buyer and seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td>Identifier of buyer and seller 1-seller，2-buyer</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order creation(second)</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Yes</td>
+<td>double</td>
+<td>#Time of order update(second)</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.</td>
+</tr>
+<tr>
+<td>fee_stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Name of Discount Token</td>
+</tr>
+<tr>
+<td>alt_fee</td>
+<td>Yes</td>
+<td>string</td>
+<td>#The discount applied to the discount token</td>
+</tr>
+<tr>
+<td>deal_fee_alt</td>
+<td>Yes</td>
+<td>string</td>
+<td>#Volume deducted as discount</td>
+</tr>
+</tbody></table>
+
+<!-- 
+  
+ -->
+<h2 id='retrieve-list-of-transactions'>Retrieve List of Transactions</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.book</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>string</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Offset Position</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>The maximum number of &quot;records&quot; to be returned</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169117</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td></td>
+</tr>
+<tr>
+<td>orders</td>
+<td>Yes</td>
+<td>array</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+   offset — ，if set as 0，it means the total number of all transaction records starting from the latest transaction to the earliest transaction cannot be greater than limit;.if set as 1，it means the total number of all transaction records from the second latest transaction to the earliest transaction cannot be greater than limit;and so on.....
+</aside></p>
+
+<!-- 
+  
+ -->
+<h2 id='retrieve-trading-depth'>Retrieve Trading Depth</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.depth</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Yes</td>
+<td>string</td>
+<td>Price Precision</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>The maximum number of &quot;records&quot; to be returned</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"0.0733858"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.319"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0741178"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.252"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0742609"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">],</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.1250465"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.272"</span><span class="p">]],</span><span class="w"> 
+      </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"0.0730197"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.275"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0723"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.052"</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">"0.0722876"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0.302"</span><span class="p">],</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.0e-7"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1"</span><span class="p">]]},</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1527559250</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<aside class="notice">
+   interval — possible value：0，0.1，0.01，0.001，……，0.0000000001
+</aside>
+
+<!-- 
+  
+
+
+ -->
+<h2 id='inquiry-on-unexecuted-orders'>Inquiry On Unexecuted Orders</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.pending</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Offset Position</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Maximum number of &quot;records&quot; to be returned</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"ETHBTC"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"limit"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"offset"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"records"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
+                    </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
+                    </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
+                    </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
+                    </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
+                    </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1526971756</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit）</td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td></td>
+</tr>
+<tr>
+<td>records</td>
+<td>Yes</td>
+<td>array</td>
+<td>Refer to order.put_limit</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+
+
+ -->
+<h2 id='inquiry-on-users-39-settled-orders'>Inquiry On Users&#39; Settled Orders</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/order.finished</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>Yes</td>
+<td>Starting Time(second)</td>
+<td>Starting Time(second)</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Yes</td>
+<td>Ending Time(second)</td>
+<td>The maximum number of &quot;records&quot; to be returned</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Offset Position</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Maximum number of &quot;records&quot; to be returned</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>1 = &quot;sell&quot;，2=&quot;buy&quot;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1393490</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>

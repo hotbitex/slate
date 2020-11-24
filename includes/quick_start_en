@@ -1,0 +1,269 @@
+<h1 id='quick-start'>Quick Start</h1><h2 id='connection-prerequisites'>Connection Prerequisites</h2>
+<p>If you intend to use API, please login to web end and finish the application and permission setting of API key first, then start developing and trading based on the detail of this file.</p>
+
+<p>You may click <a href="https://www.hotbit.pro/">here</a> to create API Key。</p>
+
+<p>After successfully creating the API key, please do remember the following information：</p>
+
+<ul>
+<li><p><code>Access Key</code> The encrypted key that allows you to gain access to your API</p></li>
+<li><p><code>Secret Key</code> The encrypted key used by the encryption process of signature verification (only visible during application process)</p></li>
+</ul>
+
+<aside class="notice">
+When creating API key, you may bind your IP address. For security concerns, it is strongly recommended that you bind your IP address when creating your API key.
+</aside>
+
+<aside class="warning">
+Risk Warning：These two encrypted keys are closely related to the security of your account. Please do NOT disclose these two encrypted keys to anyone else at the same time. The leak of your API key may result in the loss of your assets (even if your withdrawal permission still remains unavailable). If you found that your API key has been leaked, please delete all relevant API key as soon as possible.
+</aside>
+
+<table><thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#">GET /api/v2/server.time</a></td>
+<td>Retrieve System Time</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/balance.query</a></td>
+<td>Retrieve User Asset</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/asset.list</a></td>
+<td>Retrieve all available asset types and asset precision, prec means the number of decimal places</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.put_limit</a></td>
+<td>Limit Order</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.cancel</a></td>
+<td>Cancel Order</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.batch_cancel</a></td>
+<td>Cancel Orders in Large Quantities</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.deals</a></td>
+<td>Retrieve Details of Settled Orders</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.finished_detail</a></td>
+<td>Inquiry on settled orders based on order numbers</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/order.book </a></td>
+<td>Retrieve Trading List</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/order.depth</a></td>
+<td>Retrieve Trading Depth</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.pending</a></td>
+<td>Inquiry on Unexecuted Orders</td>
+</tr>
+<tr>
+<td><a href="#">POST /api/v2/order.finished</a></td>
+<td>Inquiry on User&#39;s Settled Orders</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.list</a></td>
+<td>Retrieve List of Transaction Pairs</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.last</a></td>
+<td>Retrieve The Latest Price of Designated Transaction Pair</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.deals</a></td>
+<td>Inquiry on Transaction Records of Transaction Pair</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.user_deals</a></td>
+<td>Inquiry on User&#39;s Trading Records</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.kline</a></td>
+<td>k chart inquiry</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.status</a></td>
+<td>Retrieve various real-time status of market within a designated period of time in the past, such as the latest range of increase or decrease, trading volume, maximum/minimum price etc.<a href="#">GET /api/v2/market.status_today</a></td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.status24h</a></td>
+<td>Retrieve various status of market within the past 24 hours, such as range of increase or decrease, trading volume, maximum/minimum price etc.</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/market.summary</a></td>
+<td>market summary</td>
+</tr>
+<tr>
+<td><a href="#">GET /api/v2/allticker</a></td>
+<td>Retrieve the latest information of all available transaction pairs</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Other interfaces unavailable，if attempt to visit，the system will return “error-code 403”。
+</aside>
+<h2 id='interface-type'>Interface Type</h2>
+<p>Hotbit provides users with two types of interface, you may choose the appropriate method that suits your own application scenario or preference for the inquiry on market trend, trading or withdrawal.</p>
+<h3 id='rest-api'>REST API</h3>
+<p>REST，which is the abbreviation of Representational State Transfer，is a type of communication mechanism based on HTTP that has gained comparatively more popularity recently. Each URL represents one type of resource.</p>
+
+<p>It is recommended for developers to conduct one-off operations such as trading or withdrawals by using REST API.</p>
+<h3 id='websocket-api'>WebSocket API</h3>
+<p>WWebSocket is a new type of HTML5 protocol that realizes the full duplex communications between client end and server, which allows the connection between client end and server to be established through one simple handshake. The server may actively push information to client end based on business rules and regulations.</p>
+
+<p>It is recommended for developers to use WebSocket API to retrieve information such as market trend and transaction depth etc.</p>
+
+<p><strong>Verifications Regarding The Permission Of Interface</strong></p>
+
+<p>Both of the above two types of interfaces include two types of interface, namely public interface and private interface.</p>
+
+<p>Public interface can be used to retrieve basic information and market data. The public interface call can be conducted without verification.</p>
+
+<p>Private interface can be used for the management of trading and account. Each private request must be verified through signature verification process by using your API key.</p>
+<h2 id='connect-urls'>Connect URLs</h2>
+<p>You may compare the latency status between api.hotbit.pro and ws.hotbit.pro and choose to use the one with lower level of latency.</p>
+
+<p><strong>REST API</strong></p>
+
+<p><strong><code>https://api.hotbit.io/api/v2</code></strong>
+<strong><code>https://api.hotbitcn.com/api/v2</code></strong></p>
+
+<p><strong>Websocket Feed</strong></p>
+
+<p><strong><code>wss://ws.hotbit.io/v2/</code></strong> 
+<strong><code>wss://ws.hotbitcn.com/v2/</code></strong> </p>
+
+<aside class="notice">
+Please visit Hotbit API through any IP address outside of mainland China.
+</aside>
+
+<aside class="notice">
+Due to the fact that proxy may leads to high latency and poor stability, it is not recommended to visit Hotbit API via proxy
+</aside>
+
+<aside class="notice">
+In order to guarantee the stability of API service, it is recommended to visit Hotbit API via AWS cloud server located in Singapore. If users choose to visit Hotbit API through any client end server located in mainland China, the stability of the connection will not be guaranteed.
+</aside>
+<h2 id='signature-verification'>Signature Verification</h2><h3 id='signature-introduction'>Signature Introduction</h3>
+<p>It is highly likely that the API request will be tampered during its transmission through the Internet. In order to ensure that your request will not be tampered, apart from public interface (basic information interface, market data interface), all private interface must conduct signature verification process by using your API key for the verification of parameters or parameter values to check if the parameters or parameter values have been tampered during their transmission or not.
+In order to visit certain interface, each API key is required to obtain appropriate permission. Each newly-created API key requires permission distribution. Before using the interface, please check the permission type of each interface and make sure that your API key enjoy(s) relevant permission.</p>
+
+<p>A legal request is composed of the following sections：</p>
+
+<ul>
+<li>Method Request Address：which refers to the address of access server api.huobi.pro，for example api.hotbit.io/api/v2/order/orders。</li>
+<li>API Access Id（AccessKeyId）：The Access Key included in the API Key that you applied.</li>
+<li>Signature Method（SignatureMethod）：The protocol based on md5 used for the process of calculation on user&#39;s signature, in this case, please apply md5.</li>
+<li>Signature Version（SignatureVersion）：The version of signature protocol, in this case please apply 2.</li>
+<li>Required and optional parameter：Each method includes a group of required parameters and optional parameters that are used for the definition of API call. You may check these parameters and their meanings in the description of each method.</li>
+<li>It is required to place the request parameter of POST in body.</li>
+<li>  Signature：The value generated from signature computation is used to ensure the effectiveness of the signature and that the signature has not been tampered.</li>
+</ul>
+<h3 id='signature-process'>Signature Process</h3>
+<p>Standardize the request that requires signature computation. Considering the fact that during signature computation, the results of computation by using different contents will be totally different, please do standardize the request before signature computation. Please refer to the example below that demonstrates the request regarding the inquiry on the details of the order:
+The complete request URL regarding the inquiry on the details of the order</p>
+
+<p><code>https://api.hotbit.io/api/v2/balance.query?</code></p>
+
+<p><code>api_key=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
+
+<p><code>&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
+
+<p><code>&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
+<h4 id='1-conduct-url-programming-on-parameter-and-conduct-sorting-on-parameter-based-on-ascii-order'>1. Conduct URL programming on parameter and conduct sorting on parameter based on ASCII order</h4>
+<p>For example, the original order of the request parameter is listed below</p>
+
+<p><code>api_key=6b97d781-xxxx-xxxx-576d96d0bbebc8c6</code></p>
+
+<p><code>&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
+
+<p>After sorting</p>
+
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6</code></p>
+
+<p><code>&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
+<h4 id='2-connect-all-parameters-by-quot-amp-quot-character-according-to-the-order-above'>2. Connect all parameters by &quot;&amp;&quot; character according to the order above</h4>
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
+<h4 id='3-splice-parameter-of-private-key-and-form-the-final-string-that-requries-signature-computation-as-below'>3. Splice parameter of private key and form the final string that requries signature computation as below.</h4>
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50</code>  </p>
+<h4 id='4-form-the-final-string-that-requires-signature-computation-as-below'>4. Form the final string that requires signature computation as below</h4>
+<ol>
+<li>Use the request string and API private key generated from the previous step as two parameters, call MD5 value.</li>
+</ol>
+
+<p><code>MD5(api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50)</code> </p>
+
+<ol>
+<li>Turn MD5 value into capitalized, and use the generated value as the digital signature of this interface call.</li>
+</ol>
+
+<p><code>C88F04701D3349D0A93A0164DC5A4CD9</code></p>
+<h4 id='5-add-the-generated-digital-signature-into-the-path-parameter-requested'>5.Add the generated digital signature into the path parameter requested</h4>
+<ol>
+<li>Add all required verification parameter into the path parameter of interface call</li>
+<li>Add digital signature into path parameter after URL code, parameter name &quot;sign&quot;</li>
+</ol>
+
+<p>The final API request sent to the server should be</p>
+
+<p><code>POST\n</code>
+<code>https://api.hotbit.io/api/v2/balance.query?api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
+
+<!-- 
+## Business Dictionary
+
+### Transaction Pair
+
+Transaction pair is composed of base currency and quote currency. Take BTC/USDT transaction pair for example, BTC is the base currency, and USDT is the quote currency.
+
+The corresponding field of base currency is base-currency 。
+
+The corresponding field of quote currency is quote-currency 。
+
+
+### Introduction on Relevant ID of Order and Order Settlement
+
+* order-id : The only id for the order
+* client-order-id : The user's customized ID, which is imported by order placement and corresponds with the order-id returned after the order has been placed successfully. This ID is valid within 24 hours.
+* match-id : The order ID during its matching process
+* trade-id : The only id for order settlement
+
+### Order Type
+
+Currently, Hotbit's order types are composed of business directions and type of order operation, for example: buy-market, buy is business direction and market is type of operation
+
+Business Direction：
+
+* buy : Buy
+* sell: Sell
+
+Order Type:
+
+* type : 1=Limit Order
+* side : 1-Seller，2-Buyer
+
+
+### Order Status
+
+* submitted : Waiting to be settled, the orders under this status have already entered the queue of matching process.
+* partial-filled : Partly settled, the orders under this status are in the queue of matching process, with part of the order settled by the market already, and the remaining part of the order is waiting to be settled.
+* filled : Settled. The orders under this status are not in the queue of matching process. The orders have all been settled by the market.
+* partial-canceled : Part of the settled order cancelled. The order under this status is not in the queue of matching process, this status is transformed from partial-filled. The order is partly settled, but the settled part of the order has been cancelled.
+* canceled : Canceled. The order under this status is not in the queue of matching orders. The order under this status does not have any settled quantity, and has been successfully canceled.
+* canceling : Canceling. The order under this status is in the process of being canceled. Considering the fact that the order will only be completely canceled after it has been deleted from the queue of matching process, this status refers to the status of transition in between.
+
+
+For further information, please visit [Hotbit](https://www.hotbit.io) for more details.
+
+ -->

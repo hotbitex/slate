@@ -1,0 +1,174 @@
+<h1 id='41654e0268'>基础信息</h1><h2 id='d4b46c1141'>资产类型和精度</h2>
+<p>此接口返回所有资产类型和精度</p>
+
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li>GET /api/v2/asset.list</li>
+</ul>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/asset.list"</span>
+</code></pre>
+<p><strong>返回字段</strong></p>
+
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>币种</td>
+</tr>
+<tr>
+<td>prec</td>
+<td>int</td>
+<td>精确到小数点后多少位</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585283976</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='67361e2961'>获取当前系统时间戳</h2>
+<p>此接口返回当前的系统时间戳。</p>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/server.time"</span>
+</code></pre>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li>GET /api/v2/server.time</li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<blockquote>
+<p>Response: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585282798</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='0f90157d99'>最新成交信息</h2>
+<p>此接口返回获取全市场交易对的最新成交信息</p>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/allticker"</span>
+</code></pre>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li>GET /api/v2/v2/allticker</li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<blockquote>
+<p>Response: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585282798</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6711.35"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6709.14"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6837.32"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6709.14"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6523.3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6679.74"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6714.73"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"155414.70091"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"137.9"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138.09"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"140.91"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138.09"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"133.53"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"136.76"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138.01"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH_USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2919662.76839"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>返回字段</strong></p>
+
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>交易对名称</td>
+</tr>
+<tr>
+<td>buy</td>
+<td>string</td>
+<td>买一价</td>
+</tr>
+<tr>
+<td>sell</td>
+<td>string</td>
+<td>卖一价</td>
+</tr>
+<tr>
+<td>open</td>
+<td>string</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>string</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>string</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>string</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>last</td>
+<td>string</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>string</td>
+<td>成交量</td>
+</tr>
+</tbody></table>

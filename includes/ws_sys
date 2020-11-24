@@ -1,0 +1,54 @@
+<h1 id='973bfb7322'>系统接口</h1><h2 id='a58e05d6e4'>发送心跳</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"server.ping"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="s2">"pong"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: server.ping</li>
+<li>params: []</li>
+</ul>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<p>无</p>
+<h3 id='2213f4c32f'>响应数据</h3>
+<p>无</p>
+<h2 id='9ffe2bc162'>获取系统时间</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"server.time"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="mi">1511941406</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: system.time</li>
+<li>params: []</li>
+</ul>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<p>无</p>
+<h3 id='2213f4c32f-2'>响应数据</h3>
+<p>服务器时间</p>

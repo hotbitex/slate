@@ -1,0 +1,929 @@
+<h1 id='inquiry-interface'>Inquiry Interface</h1><h2 id='line-data-inquiry'>Line Data Inquiry</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"kline.query"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"EOSETH"</span><span class="p">,</span><span class="mi">145231637</span><span class="p">,</span><span class="mi">145232657</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1525798800</span><span class="p">,</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="err">Timestamp</span><span class="w">
+            </span><span class="s2">"0.00001790"</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Opening</span><span class="w"> </span><span class="err">Price</span><span class="w">
+            </span><span class="s2">"0.00001881"</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Closing</span><span class="w"> </span><span class="err">Price</span><span class="w">
+            </span><span class="s2">"0.00001886"</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Highest</span><span class="w"> </span><span class="err">Price</span><span class="w">
+            </span><span class="s2">"0.00001790"</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Lowest</span><span class="w"> </span><span class="err">Price</span><span class="w">
+            </span><span class="s2">"169033000"</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">Volume</span><span class="w">
+            </span><span class="s2">"3025.69"</span><span class="p">,</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">Value</span><span class="w">
+            </span><span class="s2">"ACATETH"</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">Transaction</span><span class="w"> </span><span class="err">Market</span><span class="w"> </span><span class="err">Name</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="w">
+</span><span class="p">}</span><span class="w"> 
+</span></code></pre>
+<ul>
+<li>method: kline.query</li>
+<li>params:</li>
+</ul>
+<h3 id='request-parameter'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Starting Time</td>
+</tr>
+<tr>
+<td>end</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Ending Time</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Data Retrieval Period</td>
+</tr>
+</tbody></table>
+<h3 id='response-data'>Response Data</h3>
+<p>Please refer to the picture on the right hand side</p>
+<h2 id='inquiry-on-latest-price'>Inquiry on Latest Price</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"price.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000.00000000"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: price.query</li>
+<li>params: [&quot;market_name&quot;]</li>
+</ul>
+<h3 id='request-parameter-2'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-2'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>double</td>
+<td>Yes</td>
+<td>Price</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-current-market-status'>Inquiry on Current Market Status</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"state.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="mi">86400</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">period，unit</span><span class="w"> </span><span class="err">second</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">latest</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">opening</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="err">closing</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">highest</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">lowest</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="err">trading</span><span class="w"> </span><span class="err">volume</span><span class="w">
+    </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">trading</span><span class="w"> </span><span class="err">value</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: state.query</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-3'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market list</td>
+<td>json array</td>
+<td>Yes</td>
+<td>List of Transaction Pair&#39;s Market Name</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Period，Unit：Second，for example：86400 means 24 hours</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-3'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Period</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest Price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>double</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>double</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>double</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>double</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Volume</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-the-market-status-of-the-current-day'>Inquiry on The Market Status of The Current Day</h2>
+<aside class="notice">
+   The interface inquires the market status of calendar day，for example, if the current time is 2017-12-20 14:21:35，then by calling this interface, the returned result will be the data of 2017-12-20，which is different from state.query interface，the data that state.query returns are the data within a designated period of time，which may go beyond a calendar day
+</aside>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"today.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">Latest</span><span class="w"> </span><span class="err">Price</span><span class="w">
+    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">Opening</span><span class="w"> </span><span class="err">Price</span><span class="w">
+    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="err">Closing</span><span class="w"> </span><span class="err">Price</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">Highest</span><span class="w"> </span><span class="err">Price</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">Lowest</span><span class="w"> </span><span class="err">Price</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">Volume</span><span class="w">
+    </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">Value</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.query</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-4'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-4'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest Price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>double</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>double</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>double</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>double</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Volume</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-user-39-s-order-settlement'>Inquiry on User&#39;s Order Settlement</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"deals.query"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512454847.188796</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512445625.751971</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442938.956193</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442929.0405071</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442927.2021289</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: deals.query</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-5'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Maximum Return Volume</td>
+</tr>
+<tr>
+<td>last_id</td>
+<td>integer</td>
+<td>Yes</td>
+<td>The last id starting from the latest order id to the last id in the past (from smaller id number to bigger id number), for example, if there are 5 id altogether, namely 1,2,3,4 and 5, and that the last_id is set as 3, then even if the limit is set as 5, only the data of the two groups of orders under order id 4 and 5 will be returned.</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-5'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>double</td>
+<td>deal_id</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Yes</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Trading Time</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Price</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>double</td>
+<td>Volume of Settled Orders</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Type of Settlement</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-the-depth-of-order'>Inquiry on The Depth of Order</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depth.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"EOSUSDT"</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s2">"1"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"20"</span><span class="p">]</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">"800"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.query</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-6'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Maximum Volume Returned</td>
+</tr>
+<tr>
+<td><strong>interval</strong></td>
+<td>String</td>
+<td>Yes</td>
+<td>Precision，for example&quot;0.001&quot;，the data retrieved will be the type of numbers such as：12.975. Another example&quot;5&quot;，you will retrieve numbers such as &quot;15&quot; &quot;20&quot; &quot;10&quot; .</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-6'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+<h2 id='inquiry-on-user-39-s-unsettled-orders'>Inquiry on User&#39;s Unsettled Orders</h2>
+<aside class="notice">
+   Order API call requires auth verification，please call server.auth method for request of verification first，then call
+</aside>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCETH"</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">or</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[[],</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ACATETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8675864</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="err">Order</span><span class="w"> </span><span class="err">ID</span><span class="w">
+                    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACATETH"</span><span class="p">,</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="err">Market</span><span class="w"> </span><span class="err">Name</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="err">Order</span><span class="w"> </span><span class="err">Type</span><span class="w"> </span><span class="mi">1</span><span class="err">-Limit</span><span class="w"> </span><span class="err">Order</span><span class="w"> </span><span class="mi">2</span><span class="err">-Market</span><span class="w"> </span><span class="err">Order</span><span class="w">
+                    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">Direction</span><span class="w"> </span><span class="mi">1</span><span class="err">-ASK</span><span class="w"> </span><span class="mi">2</span><span class="err">-Bid</span><span class="w">
+                    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">15731</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">ID</span><span class="w">
+                    </span><span class="s2">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1524482296.075341</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">Order's</span><span class="w"> </span><span class="err">Time</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Creation</span><span class="w">
+                    </span><span class="s2">"mtime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1524482296.075341</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">Order's</span><span class="w"> </span><span class="err">Time</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Modification</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00001899"</span><span class="p">,</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">Price</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="err">Volume</span><span class="w">
+                    </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">taker</span><span class="w"> </span><span class="err">fee</span><span class="w"> </span><span class="err">rate</span><span class="w">
+                    </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">maker</span><span class="w"> </span><span class="err">fee</span><span class="w"> </span><span class="err">rate</span><span class="w">
+                    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">                 </span><span class="err">#</span><span class="w"> </span><span class="err">Remaining</span><span class="w"> </span><span class="err">Unsettled</span><span class="w"> </span><span class="err">Volume</span><span class="w">
+                    </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e-8"</span><span class="p">,</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">Settled</span><span class="w"> </span><span class="err">Volume</span><span class="w">
+                    </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e-16"</span><span class="p">,</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">Settled</span><span class="w"> </span><span class="err">Value</span><span class="w">
+                    </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e-12"</span><span class="w">          </span><span class="err">#</span><span class="w"> </span><span class="err">Fee</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Settlement</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w"> 
+        </span><span class="err">……</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SPHTXBTC"</span><span class="p">:{</span><span class="err">……</span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.query</li>
+<li>params:</li>
+</ul>
+<h3 id='request-parameter-7'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market list</td>
+<td>list</td>
+<td>Yes</td>
+<td>List of market name, if blank, return all market data</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>offset</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Maximum volume returned, less than 101</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-7'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>double</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>type</td>
+<td>double</td>
+<td>Order Type 1-Limit order 2-market order</td>
+</tr>
+<tr>
+<td>side</td>
+<td>double</td>
+<td>Trading direction 1-ASK 2-Bid</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>The order&#39;s time of creation</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>The order&#39;s time of modification</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Volume</td>
+</tr>
+<tr>
+<td>taker_fee</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>taker fee rate</td>
+</tr>
+<tr>
+<td>maker_fee</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>maker fee rate</td>
+</tr>
+<tr>
+<td>left</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Remaining Unsettled Volume</td>
+</tr>
+<tr>
+<td>deal_stock</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Settled Volume</td>
+</tr>
+<tr>
+<td>deal_money</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Settled Value</td>
+</tr>
+<tr>
+<td>deal_fee</td>
+<td>Integer(No Symbol 32 Digit)</td>
+<td>Fee of Settlement</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-the-user-39-s-settled-orders'>Inquiry on The User&#39;s Settled Orders</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.history"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="mi">1511941006</span><span class="p">,</span><span class="mi">1511941406</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.history</li>
+<li>param<br></li>
+</ul>
+<h3 id='request-parameter-8'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Type of Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>Integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-8'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>records</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>*<em>Returned Value：Refer to order.query method for returned value. *</em></p>
+<h2 id='inquiry-on-user-39-s-asset'>Inquiry on User&#39;s Asset</h2>
+<aside class="notice">
+   The call requires auth verification，please call server.auth method for the request of verification first，then call.
+</aside>
+
+<aside class="warning">
+   Parameter params cannot be empty
+</aside>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"asset.query"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"ETH"</span><span class="p">,</span><span class="s2">"BTC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Available</span><span class="w"> </span><span class="err">Asset</span><span class="w">
+            </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">Frozen</span><span class="w"> </span><span class="err">Asset</span><span class="w">
+        </span><span class="p">},</span><span class="w"> 
+        </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.query</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter-9'>Request Parameter</h3>
+<p>Returned Value：Refer to the example above.</p>
+<h3 id='response-data-9'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>available</td>
+<td>double</td>
+<td>Available Asset</td>
+</tr>
+<tr>
+<td>freeze</td>
+<td>string</td>
+<td>Frozen Asset</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-regarding-the-records-of-changes-in-user-39-s-asset'>Inquiry Regarding The Records of Changes in User&#39;s Asset</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"balance.history"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTC"</span><span class="p">,</span><span class="s2">"deposit"</span><span class="p">,</span><span class="mi">1501940406</span><span class="p">,</span><span class="mi">1513328112</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+            </span><span class="p">{</span><span class="w"> 
+              </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1511856143.3754101</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">Timestamp</span><span class="w">
+              </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="err">Asset</span><span class="w"> </span><span class="err">Type</span><span class="w">
+              </span><span class="s2">"business"</span><span class="p">:</span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="err">Business</span><span class="w"> </span><span class="err">Identifier</span><span class="w"> </span><span class="err">deposit-deposit，freeze-freeze/defreeze，withdraw-withdrawal</span><span class="w">
+              </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="err">Change</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Asset</span><span class="w">
+              </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300000"</span><span class="p">,</span><span class="w">          </span><span class="err">#</span><span class="w"> </span><span class="err">Balance</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">user's</span><span class="w"> </span><span class="err">asset</span><span class="w"> </span><span class="err">after</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">change</span><span class="w">
+              </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10003</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="err">Other</span><span class="w"> </span><span class="err">Details</span><span class="w">
+            </span><span class="p">},</span><span class="w"> 
+            </span><span class="err">...</span><span class="w"> 
+         </span><span class="p">]</span><span class="w"> 
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: balance.history</li>
+<li>params:</li>
+</ul>
+<h3 id='request-parameter-10'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>Yes</td>
+<td>asset name, which can be null</td>
+</tr>
+<tr>
+<td>business</td>
+<td>String</td>
+<td>Yes</td>
+<td>Name of Business</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Starting Time</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Ending Time</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>offset</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Maximum returned volume, less than 101</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-10'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>double</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>Asset Type</td>
+</tr>
+<tr>
+<td>business</td>
+<td>string</td>
+<td>Business Identifier deposit-deposit，freeze-freeze/defreeze，withdraw-withdrawal</td>
+</tr>
+<tr>
+<td>change</td>
+<td>string</td>
+<td>Change of Asset</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>Balance of user&#39;s asset after the change</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>string</td>
+<td>Frozen Asset</td>
+</tr>
+</tbody></table>

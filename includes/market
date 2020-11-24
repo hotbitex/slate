@@ -1,0 +1,840 @@
+<h1 id='d9d514d202'>行情数据</h1><h2 id='b6dc03688a'>获取交易对列表</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.list</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASHBTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fee_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">  
+                </span><span class="s2">"stock_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+                </span><span class="s2">"money_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> 
+                </span><span class="s2">"min_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w"> 
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASHETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fee_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"min_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169333</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>请求参数</strong>
+无</p>
+
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stock</td>
+<td>是</td>
+<td>string</td>
+<td>交易的币种</td>
+<td>-</td>
+</tr>
+<tr>
+<td>money</td>
+<td>是</td>
+<td>string</td>
+<td>使用的币种</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fee_prec</td>
+<td>是</td>
+<td>Integer</td>
+<td>税率精度4位小数</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stock_prec</td>
+<td>是</td>
+<td>Integer</td>
+<td>stock精度</td>
+<td>-</td>
+</tr>
+<tr>
+<td>money_prec</td>
+<td>是</td>
+<td>Integer</td>
+<td>money精度</td>
+<td>-</td>
+</tr>
+<tr>
+<td>min_amount</td>
+<td>是</td>
+<td>double</td>
+<td>下单最小值</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+ -->
+<h2 id='382248de63'>获取指定交易对的最新价格</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.last</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称</td>
+<td>&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;...</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07413600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169525</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>double</td>
+<td>下单最小值</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id='134cc68193'>查询交易对交易记录</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.deals</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+<td>&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;...</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>是</td>
+<td>Integer</td>
+<td>查询个数限制</td>
+<td>limit &lt;= 1000)</td>
+</tr>
+<tr>
+<td>last_id</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>返回大于order_id &gt; last_id的交易数据</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169562</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id='18ecb36857'>查询用户交易记录</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>POST /api/v2/market.user_deals</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>参数名称 | 是否必须 | 类型                 |描述            |   取值范围
+--------| --------| ---- ----------------|-------------|------------
+api_key |是       | string               |用户API KEY   | -
+sign    |是       | Integer              |用户签名值     | -
+market  |是        | Integer(无符号64位)  |返market名称， | -如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;
+offset  |是         | Integer(无符号64位) |偏移位置       | -
+limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，2，3，4....1000</p>
+
+<aside class="notice">
+   offset — 如果设置为0，表示从最新一个订单开始算起，往之前时间的所有交易记录，总笔数不能大于limit；如果设置为1，表示从次新一个订单开始算起，往之前时间的所有满足条件订单记录，总数不能大于limit；以此类推.....
+</aside>
+
+<aside class="notice">
+   limit — limit <= 1000
+</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>是</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='k'>k线查询</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.kline</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称</td>
+<td>&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>起始时间戳(秒)</td>
+<td>1563724800 时间戳（秒）</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>结束时间戳(秒)</td>
+<td>1563726800 时间戳（秒）</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>周期间隔,单位秒,(起始时间到结束时间，总周期数)</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+   interval < 1000
+</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+            </span><span class="p">[</span><span class="mi">1525067600</span><span class="p">,</span><span class="w"> </span><span class="s2">"11714.04"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11710.01"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11778.69"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11697.18"</span><span class="p">,</span><span class="w"> </span><span class="s2">"13.604065"</span><span class="p">,</span><span class="w"> </span><span class="s2">"159329.23062211"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">],</span><span class="w"> 
+            </span><span class="p">[</span><span class="mi">1565067660</span><span class="p">,</span><span class="w"> </span><span class="s2">"11703.47"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11716.65"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11720.55"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11703.47"</span><span class="p">,</span><span class="w"> </span><span class="s2">"14.401973"</span><span class="p">,</span><span class="w"> </span><span class="s2">"168649.82127032"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">],</span><span class="w"> 
+            </span><span class="p">[</span><span class="mi">1565067720</span><span class="p">,</span><span class="w"> </span><span class="s2">"11714.24"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11715.09"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11724.5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11707.78"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12.287975"</span><span class="p">,</span><span class="w"> </span><span class="s2">"143952.77384769"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169586</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>数组0</td>
+<td>是</td>
+<td>Integer(无符号64位)</td>
+<td>时间戳</td>
+<td>1525067600 时间戳</td>
+</tr>
+<tr>
+<td>数组1</td>
+<td>是</td>
+<td>double</td>
+<td>开盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组2</td>
+<td>是</td>
+<td>double</td>
+<td>收盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组3</td>
+<td>是</td>
+<td>double</td>
+<td>最高价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组4</td>
+<td>是</td>
+<td>double</td>
+<td>最低价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组5</td>
+<td>是</td>
+<td>double</td>
+<td>涨幅</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组6</td>
+<td>是</td>
+<td>double</td>
+<td>成交量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>数组7</td>
+<td>是</td>
+<td>string</td>
+<td>成交对</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+ -->
+<h2 id='market'>获取过去指定时间段market当前最新涨跌幅，交易量，最高/最低价格等状态</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称</td>
+<td>&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>period</td>
+<td>是</td>
+<td>Integer(32位)</td>
+<td>查询周期，以秒为单位。即从现在开始往前推的时间，</td>
+<td>例如：86400，是过去24小时。</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074162"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074162"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.314"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.023315531"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169247</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>是</td>
+<td>Integer</td>
+<td>查询周期</td>
+<td>例如：86400，是过去24小时。</td>
+</tr>
+<tr>
+<td>last</td>
+<td>是</td>
+<td>double</td>
+<td>最新价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>open</td>
+<td>是</td>
+<td>double</td>
+<td>开盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>close</td>
+<td>是</td>
+<td>double</td>
+<td>收盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>high</td>
+<td>是</td>
+<td>double</td>
+<td>最高价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>low</td>
+<td>是</td>
+<td>double</td>
+<td>最低价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>是</td>
+<td>double</td>
+<td>成交量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>是</td>
+<td>double</td>
+<td>交易量</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id='market-2'>获取当日market状态</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status_today</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>是</td>
+<td>string</td>
+<td>market名称，</td>
+<td>如：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074015"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074287"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074485"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.073"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1141.63"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83.11985574"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169293</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>last</td>
+<td>是</td>
+<td>double</td>
+<td>最新价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>open</td>
+<td>是</td>
+<td>Integer</td>
+<td>开盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>close</td>
+<td>是</td>
+<td>Integer</td>
+<td>收盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>high</td>
+<td>是</td>
+<td>Integer</td>
+<td>最高价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>low</td>
+<td>是</td>
+<td>Integer</td>
+<td>最低价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>是</td>
+<td>Integer</td>
+<td>成交量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>是</td>
+<td>Integer</td>
+<td>交易量</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id='market-3'>获取当日market状态</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status24h</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"TRXETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013523"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013723"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887054.18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"119.2565600483"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074015"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074287"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074485"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.073"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1141.63"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83.11985574"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169293</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+<th>取值范围</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>是</td>
+<td>Integer32</td>
+<td>周期</td>
+<td>86400</td>
+</tr>
+<tr>
+<td>last</td>
+<td>是</td>
+<td>double</td>
+<td>最新价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>open</td>
+<td>是</td>
+<td>double</td>
+<td>开盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>close</td>
+<td>是</td>
+<td>double</td>
+<td>收盘价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>high</td>
+<td>是</td>
+<td>double</td>
+<td>最高价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>low</td>
+<td>是</td>
+<td>double</td>
+<td>最低价</td>
+<td>-</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>是</td>
+<td>double</td>
+<td>成交量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>是</td>
+<td>double</td>
+<td>交易量</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id='market-4'>market概要</h2>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.summary</code></li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>markets</td>
+<td>是</td>
+<td>json array</td>
+<td>market名称json array，如：[&quot;BTCUSD&quot;,&quot;BCCUSD&quot;]，如为空数组:[],返回所有market。</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUNBTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169429</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>是</td>
+<td>string</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>ask_count</td>
+<td>是</td>
+<td>double</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>ask_amount</td>
+<td>是</td>
+<td>double</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>bid_count</td>
+<td>是</td>
+<td>double</td>
+<td>交易对</td>
+</tr>
+<tr>
+<td>bid_amount</td>
+<td>是</td>
+<td>double</td>
+<td>交易对</td>
+</tr>
+</tbody></table>

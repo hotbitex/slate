@@ -1,0 +1,845 @@
+<h1 id='interface-subscription-cancellation-of-interface-subscription'>Interface Subscription/Cancellation of Interface Subscription</h1><h2 id='subscription-of-market-trend'>Subscription of Market Trend</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"kline.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: kline.subscribe</li>
+<li>params: </li>
+</ul>
+
+<p>Request Parameter：</p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Period of Data Retrieval</td>
+</tr>
+</tbody></table>
+
+<p>After the subscription is finished successfully, the subscribed data will be pushed to client end. Please refer to <strong>[Market Trend Push]</strong> for the content of data.</p>
+<h2 id='market-trend-push'>Market Trend Push</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kline.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1513135140</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">]],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Request Parameter：
+&quot;params&quot;: [ 
+    [ 
+      1492358400,  # Timestamp
+      &quot;7000.00&quot;,   # Opening Price
+      &quot;8000.0&quot;,    # Closing Price
+      &quot;8100.00&quot;,   # Highest Price
+      &quot;6800.00&quot;,   # Lowest Price
+      &quot;1000.00&quot;    # Settled Volume
+      &quot;123456.00&quot;, # Settled Value
+      &quot;BTCBCC&quot;     # Market name of transaction pair traded
+    ]
+]</p>
+<h2 id='cancellation-of-subscription-on-market-trend'>Cancellation of Subscription on Market Trend</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"kline.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: kline.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter'>Request Parameter</h3><h3 id='response-data'>Response Data</h3><h2 id='subscription-of-latest-price'>Subscription of Latest Price</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"price.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: price.subscribe</li>
+<li>params: [market]</li>
+</ul>
+<h3 id='request-parameter-2'>Request Parameter：</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Yes</td>
+<td>Market Name</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-2'>Response Data</h3>
+<p>Name of Parameter      |  Description
+---------    |
+status       | Successful or not</p>
+<h2 id='push-of-latest-price'>Push of Latest Price</h2>
+<aside class="notice">
+   After the subscription is finished successfully，the data of the content will be actively pushed to client end.
+</aside>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000.00000000"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: price.update</li>
+<li>params: [market,price]</li>
+</ul>
+<h3 id='request-parameter-3'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Latest Price</td>
+</tr>
+</tbody></table>
+<h2 id='cancellation-of-subscription-on-latest-price'>Cancellation of Subscription on Latest Price</h2>
+<ul>
+<li>method: price.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"price.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-parameter-4'>Request Parameter</h3><h3 id='response-data-3'>Response Data</h3><h2 id='subscription-on-market-status'>Subscription on Market Status</h2>
+<aside class="notice">
+   Subscription on 24-hour market status
+</aside>
+
+<ul>
+<li>method: state.subscribe</li>
+<li>params: market</li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"state.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCUSD"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-parameter-5'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>List of the market name of transaction pair traded</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-4'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Successful or not</td>
+</tr>
+</tbody></table>
+<h2 id='push-of-market-status'>Push of Market Status</h2>
+<aside class="notice">
+  After the subscription is finished successfully，the data of status will be pushed to client end by trading server
+</aside>
+
+<ul>
+<li>method: state.update</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"state.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-parameter-6'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data-5'>Response Data</h3>
+<p>Please refer to state.query method for returned value</p>
+<h2 id='cancellation-of-push-on-market-status'>Cancellation of Push on Market Status</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"state.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: state.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h2 id='subscription-on-the-market-status-of-the-current-day'>Subscription on The Market Status of The Current Day</h2>
+<aside class="notice">
+Subscription on market status of the current day
+</aside>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"today.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.subscribe</li>
+<li>params: </li>
+</ul>
+<h3 id='request-parameter-7'>Request Parameter：</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Parameter Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market list</td>
+<td>String</td>
+<td>Yes</td>
+<td>List of Market Name</td>
+</tr>
+</tbody></table>
+<h2 id='push-on-the-market-status-of-the-current-day'>Push on The Market Status of The Current Day</h2>
+<p>After the subscription is finished successfully，the server will actively push data to client end.</p>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w"> 
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.update</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter-8'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data-6'>Response Data</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>Yes</td>
+<td>double</td>
+<td>Period</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest Price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>double</td>
+<td>Settled Volume</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='cancellation-of-subscription-on-the-market-status-of-the-current-day'>Cancellation of Subscription on The Market Status of The Current Day</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"today.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter-9'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data-7'>Response Data</h3>
+<p>status  Successful or not</p>
+<h2 id='subscription-on-order-settlement'>Subscription on Order Settlement</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"deals.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCUSD"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: deals.subscribe</li>
+<li>params:  [maket]</li>
+</ul>
+<h3 id='request-parameter-10'>Request Parameter</h3>
+<p>| market       | List of The Market Name of Transaction Pair Traded</p>
+<h3 id='response-data-8'>Response Data</h3>
+<p>status  Successful or not</p>
+<h2 id='push-on-order-settlement'>Push on Order Settlement</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deals.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512454847.188796</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512445625.751971</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442938.956193</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w"> 
+             </span><span class="err">...</span><span class="w"> 
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442927.2021289</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442109.0283101</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512441964.500567</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512441751.9356339</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">}</span><span class="w"> 
+         </span><span class="p">]</span><span class="w">
+     </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Please refer to the result returned by deals.query</p>
+<h2 id='cancellation-of-subscription-on-order-settlement'>Cancellation of Subscription on Order Settlement</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"deals.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: deals.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h3 id='request-parameter-11'>Request Parameter</h3>
+<p>No</p>
+<h3 id='response-data-9'>Response Data</h3>
+<p>status  Successful or not</p>
+<h2 id='subscription-on-order-depth'>Subscription on Order Depth</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depth.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"EOSUSDT"</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s2">"0.1"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.subscribe</li>
+<li>&quot;params&quot;:[ 
+&quot;BTCBCC&quot;,  # Market Name 
+100,       # Available price level of order：1, 5, 10, 20, 30, 50, 100 
+&quot;0.0001&quot;   # Precision on price range, available values：&quot;0&quot;,&quot;0.00000001&quot;,&quot;0.0000001&quot;,&quot;0.000001&quot;,&quot;0.00001&quot;, &quot;0.0001&quot;, &quot;0.001&quot;, &quot;0.01&quot;, &quot;0.1&quot;
+]</li>
+</ul>
+<h3 id='request-parameter-12'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>Precision on Price Range</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-10'>Response Data</h3>
+<p>status  Successful or not</p>
+<h2 id='subscription-on-the-depth-of-order-in-large-quantities'>Subscription on The Depth of Order in Large Quantities</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depths.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[[</span><span class="s2">"ETCUSDT"</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s2">"0.1"</span><span class="p">]],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depths.subscribe</li>
+<li>params: [[ 
+market. ,  # market name 
+price,       # available price level of order：1, 5, 10, 20, 30, 50, 100 
+precision   # available precisions of price range：&quot;0&quot;,&quot;0.00000001&quot;,&quot;0.0000001&quot;,&quot;0.000001&quot;,&quot;0.00001&quot;, &quot;0.0001&quot;, &quot;0.001&quot;, &quot;0.01&quot;, &quot;0.1&quot;
+]]</li>
+</ul>
+<h3 id='request-parameter-13'>Request Parameter</h3>
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Market Name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Order Price</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>Precision of Price Range</td>
+</tr>
+</tbody></table>
+<h3 id='response-data-11'>Response Data</h3>
+<p>status  successful or not</p>
+<h2 id='push-of-data-on-order-depth'>Push of Data on Order Depth</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"20"</span><span class="p">]],</span><span class="w"> </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"800"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">]]},</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.update</li>
+<li>params: [ 
+true, #clean: Boolean, true: complete result，false: last returned updated result 
+{ 
+    &quot;asks&quot;: [
+        [
+            &quot;8000&quot;, # price 
+            &quot;20&quot;    # volume 
+        ],<br>
+        [
+            &quot;8000.1&quot;, # price 
+            &quot;20&quot;      # <strong>the sum of the total number of all orders with their prices being price≥8000，less than8000.1</strong>
+        ]
+     ], 
+    &quot;bids&quot;: 
+    [
+        [
+            &quot;800&quot;, 
+            &quot;4&quot;
+        ],
+        [
+            &quot;800.1&quot;, 
+            &quot;5&quot;
+        ]
+    ] 
+ },
+&quot;BTCBCC&quot;             # Market name of transaction pair traded
+]</li>
+</ul>
+
+<p>Description on returned result：
+Take the example of the precision of price range as 0.1</p>
+<h2 id='cancellation-of-subscription-on-order-depth'>Cancellation of Subscription on Order Depth</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depth.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h2 id='subscription-on-user-39-s-order-status'>Subscription on User&#39;s Order Status</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCETH"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.subscribe</li>
+<li>params: List of market name</li>
+</ul>
+<h2 id='push-on-changes-of-user-39-s-order'>Push on Changes of User&#39;s Order</h2>
+<aside class="notice">
+   Each change on order's status will be pushed to client end.
+</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">regarding</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">change</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">status，Integer</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="mi">1</span><span class="err">-new</span><span class="w"> </span><span class="err">order</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="err">-update</span><span class="w"> </span><span class="err">order</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="err">-settled</span><span class="w"> </span><span class="err">completely</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422458</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">1</span><span class="err">-limit</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">-market</span><span class="w"> </span><span class="err">order</span><span class="w">
+            </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">1</span><span class="err">-Ask</span><span class="w"> </span><span class="mi">2</span><span class="err">-Bid</span><span class="w"> 
+            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1513819599.987308</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">create_time</span><span class="w"> 
+            </span><span class="s2">"mtime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1513819599.987308</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">update_time</span><span class="w"> 
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.update</li>
+<li>params: []</li>
+</ul>
+<h2 id='cancellation-on-the-subscription-of-changes-on-order-status'>Cancellation on The Subscription of Changes on Order Status</h2>
+<ul>
+<li>method: order.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='subscription-on-information-of-user-asset'>Subscription on Information of User Asset</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"asset.subscribe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTC"</span><span class="p">,</span><span class="s2">"ETH"</span><span class="p">,</span><span class="s2">"BCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.subscribe</li>
+<li>params: List of asset name</li>
+</ul>
+<h2 id='push-of-information-on-change-of-user-asset'>Push of Information on Change of User Asset</h2>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asset.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+        </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.update</li>
+<li>params: []</li>
+</ul>
+<h2 id='subscription-of-information-on-user-asset'>Subscription of Information on User Asset</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"asset.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.unsubscribe</li>
+<li>params: []</li>
+</ul>

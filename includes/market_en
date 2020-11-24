@@ -1,0 +1,769 @@
+<h1 id='market-data'>Market Data</h1><h2 id='retrieve-the-list-of-transaction-pairs'>Retrieve The List Of Transaction Pairs</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.list</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<p>The interface does not accept any parameter.</p>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASHBTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fee_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">  
+                </span><span class="s2">"stock_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+                </span><span class="s2">"money_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> 
+                </span><span class="s2">"min_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w"> 
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASHETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QASH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fee_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stock_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"money_prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"min_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169333</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required Or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>string</td>
+<td>Transaction Pair</td>
+</tr>
+<tr>
+<td>stock</td>
+<td>Yes</td>
+<td>string</td>
+<td>Token Type Traded</td>
+</tr>
+<tr>
+<td>money</td>
+<td>Yes</td>
+<td>string</td>
+<td>Token Type Used</td>
+</tr>
+<tr>
+<td>fee_prec</td>
+<td>Yes</td>
+<td>dobule</td>
+<td>Decimal precision set as 4 digits</td>
+</tr>
+<tr>
+<td>stock_prec</td>
+<td>Yes</td>
+<td>dobule</td>
+<td>stock precision</td>
+</tr>
+<tr>
+<td>money_prec</td>
+<td>Yes</td>
+<td>dobule</td>
+<td>money precision</td>
+</tr>
+<tr>
+<td>min_amount</td>
+<td>Yes</td>
+<td>dobule</td>
+<td>Minimum value required for order placement</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-the-latest-price-of-designated-transaction-pairs'>Retrieve The Latest Price Of Designated Transaction Pairs</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/market.last</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required Or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market Type，For example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07413600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169525</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Required Or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>Yes</td>
+<td>dobule</td>
+<td>Price</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-the-trading-records-of-transaction-pairs'>Inquiry On The Trading Records Of Transaction Pairs</h2>
+<p>_<em>HTTP _Request</em></p>
+
+<ul>
+<li><code>POST /api/v2/market.deals</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market Type，For example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Limit on number of inquiries(limit &lt;= 1000)</td>
+</tr>
+<tr>
+<td>last_id</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Return trading data greater than order_id &gt; last_id</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169562</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>Yes</td>
+<td></td>
+<td>Record</td>
+</tr>
+</tbody></table>
+<h2 id='inquiry-on-user-39-s-trading-records'>Inquiry On User&#39;s Trading Records</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>POST /api/v2/market.user_deals</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Yes</td>
+<td>string</td>
+<td>User&#39;s API KEY</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>User&#39;s Signature Value</td>
+</tr>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Return market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>Integer(No symbol 64 Digit)</td>
+<td>Offset Position</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Check limit on number</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+   offset — if set as 0, it means all transaction records starting from the latest order to the earliest order, the total number of all orders cannot be greater than limit; if set as 1, it means all transaction records that meet the condition from the second latest order to the earliest order, the total number of all orders cannot be greater than limit; and so on.....
+</aside>
+
+<aside class="notice">
+   limit — limit <= 1000
+</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>Yes</td>
+<td></td>
+<td>Record</td>
+</tr>
+</tbody></table>
+<h2 id='k-chart-inquiry'>k Chart Inquiry</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.kline</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Starting Time Stamp(Second)</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Ending Time Stamp(Second)</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Interval Period,unit second, (Starting time to ending time，total number of periods)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+   interval < 1000
+</aside>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+            </span><span class="p">[</span><span class="mi">1525067600</span><span class="p">,</span><span class="w"> </span><span class="s2">"11714.04"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11710.01"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11778.69"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11697.18"</span><span class="p">,</span><span class="w"> </span><span class="s2">"13.604065"</span><span class="p">,</span><span class="w"> </span><span class="s2">"159329.23062211"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">],</span><span class="w"> 
+            </span><span class="p">[</span><span class="mi">1565067660</span><span class="p">,</span><span class="w"> </span><span class="s2">"11703.47"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11716.65"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11720.55"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11703.47"</span><span class="p">,</span><span class="w"> </span><span class="s2">"14.401973"</span><span class="p">,</span><span class="w"> </span><span class="s2">"168649.82127032"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">],</span><span class="w"> 
+            </span><span class="p">[</span><span class="mi">1565067720</span><span class="p">,</span><span class="w"> </span><span class="s2">"11714.24"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11715.09"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11724.5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"11707.78"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12.287975"</span><span class="p">,</span><span class="w"> </span><span class="s2">"143952.77384769"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169586</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array0</td>
+<td>Yes</td>
+<td>Integer(No Symbol 64 Digit)</td>
+<td>Time Stamp</td>
+</tr>
+<tr>
+<td>Array1</td>
+<td>Yes</td>
+<td>double</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>Array2</td>
+<td>Yes</td>
+<td>double</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>Array3</td>
+<td>Yes</td>
+<td>double</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>Array4</td>
+<td>Yes</td>
+<td>double</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>Array5</td>
+<td>Yes</td>
+<td>double</td>
+<td>Range of Increase</td>
+</tr>
+<tr>
+<td>Array6</td>
+<td>Yes</td>
+<td>double</td>
+<td>Trading Volume</td>
+</tr>
+<tr>
+<td>Array7</td>
+<td>Yes</td>
+<td>string</td>
+<td>Market Name</td>
+</tr>
+</tbody></table>
+
+<!-- 
+
+
+ -->
+<h2 id='retrieve-various-status-such-as-the-range-of-increase-or-decrease-trading-volume-maximum-lowest-price-of-the-market-within-any-designated-period-of-time-in-the-past-etc'>Retrieve various status such as the range of increase or decrease, trading volume, maximum / lowest price of the market within any designated period of time in the past etc.</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market Name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+<tr>
+<td>period</td>
+<td>Yes</td>
+<td>Integer(32 Digit)</td>
+<td>Duration inquired, with second as unit, which means anytime starting from now to the past, for example: 86400 means the past 24 hours.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074162"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0743"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074162"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.314"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.023315531"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169247</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Duration inquired</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest Price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Range of Increase</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-the-market-status-of-the-current-day'>Retrieve the market status of the current day</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status_today</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>string</td>
+<td>market name，for example：&quot;BTC/USDT&quot;,&quot;BCC/USDT&quot;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074015"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074287"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074485"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.073"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1141.63"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83.11985574"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169293</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Range of Increase</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-the-market-status-of-the-current-day-2'>Retrieve the market status of the current day</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.status24h</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<p>This interface does not accept any parameter.</p>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"TRXETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013523"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013723"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00013199"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887054.18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"119.2565600483"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074015"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074287"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.074485"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.073"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1141.63"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83.11985574"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169293</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>Yes</td>
+<td>double</td>
+<td>Cycle</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Yes</td>
+<td>double</td>
+<td>Latest Price</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Opening Price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Closing Price</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Highest Price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Lowest Price</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Range of Increase</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Trading Volume</td>
+</tr>
+</tbody></table>
+<h2 id='market-introduction'>market Introduction</h2>
+<p><strong>HTTP Request</strong></p>
+
+<ul>
+<li><code>GET /api/v2/market.summary</code></li>
+</ul>
+
+<p><strong>Request Parameter</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>markets</td>
+<td>Yes</td>
+<td>json array</td>
+<td>market name json array，for example：[&quot;BTCUSD&quot;,&quot;BCCUSD&quot;]，if blank array:[],return all market。</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUNBTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ask_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bid_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169429</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Response Data</strong></p>
+
+<table><thead>
+<tr>
+<th>Name of Parameter</th>
+<th>Required or Not</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>

@@ -1,0 +1,838 @@
+<h1 id='c76c35d8c5'>订阅/取消订阅接口</h1><h2 id='76ec9e8d57'>行情订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"kline.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: kline.subscribe</li>
+<li>params: </li>
+</ul>
+
+<p>请求参数：</p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>是</td>
+<td>市场名</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Integer</td>
+<td>是</td>
+<td>数据获取周期</td>
+</tr>
+</tbody></table>
+
+<p>订阅成功后，订阅数据将会被推送到客户端。内容如 <strong>[行情推送]</strong> 所述。</p>
+<h2 id='9ce9c6f4c1'>行情推送</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kline.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1513135140</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">]],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>请求参数：
+&quot;params&quot;: [ 
+    [ 
+      1492358400,  # 时间戳
+      &quot;7000.00&quot;,   # 开盘价
+      &quot;8000.0&quot;,    # 收盘价
+      &quot;8100.00&quot;,   # 最高价
+      &quot;6800.00&quot;,   # 最低价
+      &quot;1000.00&quot;    # 成交量
+      &quot;123456.00&quot;, # 成交金额
+      &quot;BTCBCC&quot;     # 交易币对市场名称
+    ]
+]</p>
+<h2 id='29f1208ff2'>取消行情订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"kline.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: kline.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<p><strong>请求</strong></p>
+
+<p><strong>响应数据</strong></p>
+<h2 id='cc441b145f'>最新价订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"price.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: price.subscribe</li>
+<li>params: [market]</li>
+</ul>
+
+<p><strong>请求</strong>：
+| 参数名   | 参数类型 | 必填 | 描述         |
+| -------- | -------- | ---- | ------------ |
+| market   | String   | 是   | 市场名       |</p>
+
+<p><strong>响应数据</strong></p>
+
+<p>参数名称      |  描述
+---------    |
+status       | 是否成功</p>
+<h2 id='3b783f1df8'>最新价推送</h2>
+<aside class="notice">
+   订阅成功后，向客户端主动推送数据内容。
+</aside>
+
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"8000.00000000"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: price.update</li>
+<li>params: [market,price]</li>
+</ul>
+
+<p><strong>请求</strong>
+参数名称            | 类型           |描述
+---------          | ----          |------
+market            | string        |市场名称
+price               | string        |最新价格</p>
+<h2 id='5ef0646ade'>取消最新价订阅</h2>
+<ul>
+<li>method: price.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"price.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>请求</strong></p>
+
+<p><strong>响应数据</strong></p>
+<h2 id='22cda7f2fe'>市场状态订阅</h2>
+<aside class="notice">
+   24小时市场状态订阅。
+</aside>
+
+<ul>
+<li>method: state.subscribe</li>
+<li>params: market</li>
+</ul>
+
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"state.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCUSD"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>请求</strong>
+参数名称            |描述
+---------          |------
+market            | 交易币对市场名称列表  </p>
+
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>是否成功</td>
+</tr>
+</tbody></table>
+<h2 id='87e6c991a6'>市场状态推送</h2>
+<aside class="notice">
+  订阅成功后，状态数据会被交易服务器推送给客户端。
+</aside>
+
+<ul>
+<li>method: state.update</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"state.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>请求</strong>
+无</p>
+
+<p><strong>响应数据</strong></p>
+
+<p>返回值参考state.query方法。</p>
+<h2 id='273ab5371d'>取消市场状态推送</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"state.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: state.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h2 id='8d3825fcf0'>当日市场状态订阅</h2>
+<aside class="notice">
+当天market状态订阅。
+</aside>
+
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"today.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.subscribe</li>
+<li>params: </li>
+</ul>
+
+<p><strong>请求</strong>：
+| 参数名      | 参数类型 | 必填 | 描述       |
+| ----------- | -------- | ---- | ---------- |
+| market list | String   | 是   | 市场名列表 |</p>
+<h2 id='5a589243a4'>当日市场状态推送</h2>
+<p>订阅成功后，服务器主动向客户端推送数据。</p>
+
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w"> 
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.update</li>
+<li>params: []</li>
+</ul>
+
+<p><strong>请求</strong>
+无</p>
+
+<p><strong>响应数据</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>period</td>
+<td>是</td>
+<td>double</td>
+<td>周期</td>
+</tr>
+<tr>
+<td>last</td>
+<td>是</td>
+<td>double</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>open</td>
+<td>是</td>
+<td>Integer</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>是</td>
+<td>Integer</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>是</td>
+<td>Integer</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>是</td>
+<td>Integer</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>是</td>
+<td>double</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>deal</td>
+<td>是</td>
+<td>Integer</td>
+<td>交易量</td>
+</tr>
+</tbody></table>
+<h2 id='872ac3b1d9'>取消当日市场状态订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"today.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: today.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<p><strong>请求</strong>
+无</p>
+
+<p><strong>响应数据</strong></p>
+
+<p>status  是否成功</p>
+<h2 id='d02b960aac'>成交订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"deals.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCUSD"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: deals.subscribe</li>
+<li>params:  [maket]</li>
+</ul>
+
+<p><strong>请求</strong>
+| market       | 交易币对市场名称列表</p>
+
+<p><strong>响应数据</strong></p>
+
+<p>status  是否成功</p>
+<h2 id='0ac2b13a89'>成交推送</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deals.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512454847.188796</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512445625.751971</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442938.956193</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w"> 
+             </span><span class="err">...</span><span class="w"> 
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442927.2021289</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512442109.0283101</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512441964.500567</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512441751.9356339</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">}</span><span class="w"> 
+         </span><span class="p">]</span><span class="w">
+     </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>参考deals.query的返回结果。 </p>
+<h2 id='632b7bb9a2'>取消成交订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"deals.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: deals.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<p><strong>请求</strong>
+无</p>
+
+<p><strong>响应数据</strong></p>
+
+<p>status  是否成功</p>
+<h2 id='28dd755c73'>定单深度订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depth.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"EOSUSDT"</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s2">"0.1"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.subscribe</li>
+<li>&quot;params&quot;:[ 
+&quot;BTCBCC&quot;,  # 市场名 
+100,       # 定单价格,取值：1, 5, 10, 20, 30, 50, 100 
+&quot;0.0001&quot;   # 价格区间精度, 取值：&quot;0&quot;,&quot;0.00000001&quot;,&quot;0.0000001&quot;,&quot;0.000001&quot;,&quot;0.00001&quot;, &quot;0.0001&quot;, &quot;0.001&quot;, &quot;0.01&quot;, &quot;0.1&quot;
+]</li>
+</ul>
+
+<p><strong>请求</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>市场名</td>
+</tr>
+<tr>
+<td>price</td>
+<td>定单价格</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>价格区间精度</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应数据</strong></p>
+
+<p>status  是否成功</p>
+<h2 id='00f037da9f'>定单批量深度订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depths.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[[</span><span class="s2">"ETCUSDT"</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s2">"0.1"</span><span class="p">]],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depths.subscribe</li>
+<li>params: [[ 
+market. ,  # 市场名 
+price,       # 定单价格,取值：1, 5, 10, 20, 30, 50, 100 
+precision   # 价格区间精度, 取值：&quot;0&quot;,&quot;0.00000001&quot;,&quot;0.0000001&quot;,&quot;0.000001&quot;,&quot;0.00001&quot;, &quot;0.0001&quot;, &quot;0.001&quot;, &quot;0.01&quot;, &quot;0.1&quot;
+]]</li>
+</ul>
+
+<p><strong>请求</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>市场名</td>
+</tr>
+<tr>
+<td>price</td>
+<td>定单价格</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>价格区间精度</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应数据</strong></p>
+
+<p>status  是否成功</p>
+<h2 id='f40b359dad'>定单深度数据推送</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"20"</span><span class="p">]],</span><span class="w"> </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">"800"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">]]},</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.update</li>
+<li>params: [ 
+true, #clean: Boolean, true: complete result，false: last returned updated result 
+{ 
+    &quot;asks&quot;: [
+        [
+            &quot;8000&quot;, # 价格 
+            &quot;20&quot;    # 数量 
+        ],<br>
+        [
+            &quot;8000.1&quot;, # 价格 
+            &quot;20&quot;      # <strong>价格≥8000，小于8000.1的所有定单数量和之和</strong>
+        ]
+     ], 
+    &quot;bids&quot;: 
+    [
+        [
+            &quot;800&quot;, 
+            &quot;4&quot;
+        ],
+        [
+            &quot;800.1&quot;, 
+            &quot;5&quot;
+        ]
+    ] 
+ },
+&quot;BTCBCC&quot;             # 交易币对的市场名称
+]</li>
+</ul>
+
+<p>返回结果说明：
+以价格区间精度为0.1为例。</p>
+<h2 id='5e9b8fbd82'>取消定单深度订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"depth.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: depth.unsubscribe</li>
+<li>params: []</li>
+</ul>
+<h2 id='002efb6fa9'>用户定单状态订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.subscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="s2">"BTCETH"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.subscribe</li>
+<li>params: 市场名称列表</li>
+</ul>
+<h2 id='4a64c329be'>用户定单变化推送</h2>
+<aside class="notice">
+   定单的每次状态变化都会推送给用户端
+</aside>
+
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">定单状态变化事件类型，整数值</span><span class="w"> </span><span class="mi">1</span><span class="err">-新定单</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="err">-更新定单</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="err">-完全成交和撤单</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422458</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCBCC"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">1</span><span class="err">-limit</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">-market</span><span class="w"> </span><span class="err">order</span><span class="w">
+            </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">1</span><span class="err">-Ask</span><span class="w"> </span><span class="mi">2</span><span class="err">-Bid</span><span class="w"> 
+            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1513819599.987308</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">create_time</span><span class="w"> 
+            </span><span class="s2">"mtime"</span><span class="p">:</span><span class="w"> </span><span class="mf">1513819599.987308</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">update_time</span><span class="w"> 
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: order.update</li>
+<li>params: []</li>
+</ul>
+<h2 id='43fcc67efb'>取消定单状态变化订阅</h2>
+<ul>
+<li>method: order.unsubscribe</li>
+<li>params: []</li>
+</ul>
+
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"order.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='8dcc9e6423'>用户资产信息订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"asset.subscribe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:[</span><span class="s2">"BTC"</span><span class="p">,</span><span class="s2">"ETH"</span><span class="p">,</span><span class="s2">"BCC"</span><span class="p">],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.subscribe</li>
+<li>params: 资产名称列表</li>
+</ul>
+<h2 id='7355a7b1d0'>用户资产变化信息推送</h2>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asset.update"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+        </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"freeze"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="p">}</span><span class="w"> 
+    </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.update</li>
+<li>params: []</li>
+</ul>
+<h2 id='8dcc9e6423-2'>用户资产信息订阅</h2>
+<blockquote>
+<p>请求:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"asset.unsubscribe"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"params"</span><span class="p">:[],</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>响应:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>method: asset.unsubscribe</li>
+<li>params: []</li>
+</ul>

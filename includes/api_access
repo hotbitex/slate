@@ -1,0 +1,94 @@
+<h1 id='2d07d50c97'>接入说明</h1><h2 id='3951e02bdc'>接口概览</h2>
+<table><thead>
+<tr>
+<th>接口分类</th>
+<th>分类链接</th>
+<th>概述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>系统类</td>
+<td>/api/v2/server.time</td>
+<td>基础类接口</td>
+</tr>
+<tr>
+<td>订单类</td>
+<td>/api/v2/order.*</td>
+<td>订单类接口，包括下单、撤单、订单查询、成交查询等</td>
+</tr>
+<tr>
+<td>行情类</td>
+<td>/api/v2/market.*</td>
+<td>公共行情类接口，包括成交、深度、行情等</td>
+</tr>
+<tr>
+<td>资产类</td>
+<td>/api/v2/balance.*</td>
+<td>资产接口，包含资金变更流水，用户资产</td>
+</tr>
+</tbody></table>
+
+<p>该分类为大类整理，部分接口未遵循此规则，请根据需求查看有关接口文档。</p>
+<h2 id='c1fd2fc5ac'>限频规则</h2>
+<ul>
+<li>每个API Key 在1秒之内限制10次</li>
+<li>若接口不需要API Key，则每个IP在1秒内限制10次</li>
+</ul>
+
+<p>比如:</p>
+
+<ul>
+<li>资产订单类接口调用根据API Key进行限频：1秒10次</li>
+<li>行情类接口调用根据IP进行限频：1秒10次</li>
+</ul>
+<h2 id='21d67c3c4c'>请求格式</h2>
+<p>所有的API请求都是restful，目前只有两种方法：GET和POST</p>
+
+<ul>
+<li>GET请求：所有的参数都在路径参数里</li>
+<li>POST请求，所有参数以JSON格式发送在请求主体（body）里</li>
+</ul>
+<h2 id='dac673286f'>返回格式</h2>
+<p>所有的接口都是JSON格式。在JSON最上层有三个字段：error, result, id。一个字段表示返回状态，实际的业务数据在result字段里。</p>
+
+<p>以下是一个返回格式的样例：</p>
+
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error</td>
+<td>Object</td>
+<td>API返回错误内容，正确时为null</td>
+</tr>
+<tr>
+<td>result</td>
+<td>Object</td>
+<td>接口返回数据主体,结果出错时为null</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>Request id</td>
+</tr>
+</tbody></table>
+<h2 id='a38a81c9d5'>错误信息</h2><h3 id='api'>API 错误信息</h3>
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invalid argument</td>
+<td>参数错误</td>
+</tr>
+</tbody></table>
+<h2 id='7125ff9ee0'>使用建议</h2>
+<p>1、行情类数据信息，建议使用WebSocket方式实时接收数据，并对接收数据进行缓存操作。</p>
+
+<p>2、获取最新成交价，推荐使用market.deals接口或使用WebSocket订阅 deals.subscribe，获取实时成交价格。</p>
