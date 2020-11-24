@@ -215,24 +215,35 @@
 <p>上述请求生成签名的过程如下</p>
 
 <ul>
-<li><p>生成待签名的字符串<br>
-<code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p></li>
-<li><p>将待签名字符串添加私钥参数生成最终待签名字符串。例如：
-<code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50</code></p></li>
-<li><p>计算MD5值
-<code>MD5(&quot;api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50&quot;)</code></p></li>
+<li>生成待签名的字符串<br></li>
 </ul>
+
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
+
+<ul>
+<li>将待签名字符串添加私钥参数生成最终待签名字符串。例如：</li>
+</ul>
+
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50</code></p>
+
+<ul>
+<li>计算MD5值</li>
+</ul>
+
+<p><code>MD5(&quot;api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;secret_key=de8063ea6e99bc967ba6395d06fabf50&quot;)</code></p>
 
 <p>算出的MD5值是：c88f04701d3349d0a93a0164dc5a4cd9</p>
 
 <ul>
-<li>将MD5值转为大写
-<code>to_upper(c88f04701d3349d0a93a0164dc5a4cd9)</code></li>
+<li>将MD5值转为大写</li>
 </ul>
+
+<p><code>to_upper(c88f04701d3349d0a93a0164dc5a4cd9)</code></p>
 
 <p>得到最终的签名值是：C88F04701D3349D0A93A0164DC5A4CD9</p>
 
-<p>上述过程完成后，balance.query发送的请求参数是：
-<code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
+<p>上述过程完成后，balance.query发送的请求参数是：</p>
+
+<p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
 
 <p>说明：上述API Key和Secret Key仅为示例，在使用的时候替换为用户自己申请的API Key。    </p>
