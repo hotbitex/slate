@@ -26,7 +26,7 @@
 <h3 id='1f9ac54b15'>请求参数</h3>
 <p>无</p>
 <h3 id='2213f4c32f'>响应数据</h3>
-<p>无</p>
+<p>result pong 证明可以连上</p>
 <h2 id='9ffe2bc162'>获取系统时间</h2>
 <p><strong>WEBSOCKET</strong></p>
 
@@ -55,4 +55,4 @@
 <h3 id='1f9ac54b15-2'>请求参数</h3>
 <p>无</p>
 <h3 id='2213f4c32f-2'>响应数据</h3>
-<p>服务器时间</p>
+<p>result 返回服务时间</p>
