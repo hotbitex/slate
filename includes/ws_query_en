@@ -1,4 +1,6 @@
 <h1 id='inquiry-interface'>Inquiry Interface</h1><h2 id='line-data-inquiry'>Line Data Inquiry</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -69,6 +71,8 @@
 <h3 id='response-data'>Response Data</h3>
 <p>Please refer to the picture on the right hand side</p>
 <h2 id='inquiry-on-latest-price'>Inquiry on Latest Price</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -124,6 +128,8 @@
 </tr>
 </tbody></table>
 <h2 id='inquiry-on-current-market-status'>Inquiry on Current Market Status</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -236,6 +242,8 @@
    The interface inquires the market status of calendar day，for example, if the current time is 2017-12-20 14:21:35，then by calling this interface, the returned result will be the data of 2017-12-20，which is different from state.query interface，the data that state.query returns are the data within a designated period of time，which may go beyond a calendar day
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -331,6 +339,8 @@
 </tr>
 </tbody></table>
 <h2 id='inquiry-on-user-39-s-order-settlement'>Inquiry on User&#39;s Order Settlement</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -427,6 +437,8 @@
 </tr>
 </tbody></table>
 <h2 id='inquiry-on-the-depth-of-order'>Inquiry on The Depth of Order</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -491,6 +503,8 @@
 <aside class="notice">
    Order API call requires auth verification，please call server.auth method for request of verification first，then call
 </aside>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>Request:</p>
@@ -661,6 +675,8 @@
 </tr>
 </tbody></table>
 <h2 id='inquiry-on-the-user-39-s-settled-orders'>Inquiry on The User&#39;s Settled Orders</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -756,6 +772,8 @@
    Parameter params cannot be empty
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -806,6 +824,8 @@
 </tr>
 </tbody></table>
 <h2 id='inquiry-regarding-the-records-of-changes-in-user-39-s-asset'>Inquiry Regarding The Records of Changes in User&#39;s Asset</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>

@@ -1,4 +1,6 @@
 <h1 id='973bfb7322'>系统接口</h1><h2 id='a58e05d6e4'>发送心跳</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -26,6 +28,8 @@
 <h3 id='2213f4c32f'>响应数据</h3>
 <p>无</p>
 <h2 id='9ffe2bc162'>获取系统时间</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -45,7 +49,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <ul>
-<li>method: system.time</li>
+<li>method: server.time</li>
 <li>params: []</li>
 </ul>
 <h3 id='1f9ac54b15-2'>请求参数</h3>

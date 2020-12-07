@@ -1,4 +1,6 @@
 <h1 id='9228d31dc8'>查询接口</h1><h2 id='ed1d9b4b24'>线数据查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -73,6 +75,8 @@
 
 <p>参照 /api/v2/market.kline`</p>
 <h2 id='5ffad1afad'>最新价格查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -132,6 +136,8 @@
 </tr>
 </tbody></table>
 <h2 id='1b9e9d3736'>当前市场状态查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -248,6 +254,8 @@
    该接口查询自然日的市场状态，例如当前时间是2017-12-20 14:21:35，调用该接口返回的是2017-12-20这一天的数据，这点和state.query接口不同，state.query返回的是指定时间内的数据，可以跨自然日
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -347,6 +355,8 @@
 </tr>
 </tbody></table>
 <h2 id='2f1ae3ef13'>用户成交查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -451,6 +461,8 @@
 </tr>
 </tbody></table>
 <h2 id='8fc4a9d2fc'>定单深度查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -519,6 +531,8 @@
 <aside class="notice">
    Order API 调用需要auth认证，请先调用server.auth方法请求认证，然后再调用
 </aside>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>请求:</p>
@@ -693,6 +707,8 @@
 </tr>
 </tbody></table>
 <h2 id='f017863ae1'>用户已完成定单查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -794,6 +810,8 @@
    参数 params 不能为空
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -847,6 +865,8 @@
 </tr>
 </tbody></table>
 <h2 id='698f980872'>用户资产变动历史查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>

@@ -1,4 +1,6 @@
 <h1 id='system-interface'>System Interface</h1><h2 id='send-heartbeat'>Send Heartbeat</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -45,7 +47,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <ul>
-<li>method: system.time</li>
+<li>method: server.time</li>
 <li>params: []</li>
 </ul>
 <h3 id='request-parameter-2'>Request Parameter</h3>

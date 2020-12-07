@@ -3691,6 +3691,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 
 <p>&lt;!-- </p>
 <h1 id='973bfb7322'>系统接口</h1><h2 id='a58e05d6e4'>发送心跳</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -3718,6 +3720,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <h3 id='2213f4c32f'>响应数据</h3>
 <p>无</p>
 <h2 id='9ffe2bc162'>获取系统时间</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -3737,7 +3741,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <ul>
-<li>method: system.time</li>
+<li>method: server.time</li>
 <li>params: []</li>
 </ul>
 <h3 id='1f9ac54b15-2'>请求参数</h3>
@@ -3745,6 +3749,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <h3 id='2213f4c32f-2'>响应数据</h3>
 <p>服务器时间</p>
 <h1 id='9228d31dc8'>查询接口</h1><h2 id='ed1d9b4b24'>线数据查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -3819,6 +3825,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 
 <p>参照 /api/v2/market.kline`</p>
 <h2 id='5ffad1afad'>最新价格查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -3878,6 +3886,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h2 id='1b9e9d3736'>当前市场状态查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -3994,6 +4004,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
    该接口查询自然日的市场状态，例如当前时间是2017-12-20 14:21:35，调用该接口返回的是2017-12-20这一天的数据，这点和state.query接口不同，state.query返回的是指定时间内的数据，可以跨自然日
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4093,6 +4105,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h2 id='2f1ae3ef13'>用户成交查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4197,6 +4211,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h2 id='8fc4a9d2fc'>定单深度查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4265,6 +4281,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <aside class="notice">
    Order API 调用需要auth认证，请先调用server.auth方法请求认证，然后再调用
 </aside>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>请求:</p>
@@ -4439,6 +4457,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h2 id='f017863ae1'>用户已完成定单查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4540,6 +4560,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
    参数 params 不能为空
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4593,6 +4615,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h2 id='698f980872'>用户资产变动历史查询</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4719,6 +4743,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </tbody></table>
 <h1 id='c76c35d8c5'>订阅/取消订阅接口</h1><h2 id='76ec9e8d57'>行情订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4768,6 +4794,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 
 <p>订阅成功后，订阅数据将会被推送到客户端。内容如 <strong>[行情推送]</strong> 所述。</p>
 <h2 id='9ce9c6f4c1'>行情推送</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4791,6 +4819,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
     ]
 ]</p>
 <h2 id='29f1208ff2'>取消行情订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4818,6 +4848,8 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 
 <p><strong>响应数据</strong></p>
 <h2 id='cc441b145f'>最新价订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4856,6 +4888,8 @@ status       | 是否成功</p>
    订阅成功后，向客户端主动推送数据内容。
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -4880,6 +4914,8 @@ price               | string        |最新价格</p>
 <li>method: price.unsubscribe</li>
 <li>params: []</li>
 </ul>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>请求:</p>
@@ -4911,6 +4947,8 @@ price               | string        |最新价格</p>
 <li>method: state.subscribe</li>
 <li>params: market</li>
 </ul>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>请求:</p>
@@ -4985,6 +5023,8 @@ market            | 交易币对市场名称列表  </p>
 
 <p>返回值参考state.query方法。</p>
 <h2 id='273ab5371d'>取消市场状态推送</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5011,6 +5051,8 @@ market            | 交易币对市场名称列表  </p>
 <aside class="notice">
 当天market状态订阅。
 </aside>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>请求:</p>
@@ -5128,6 +5170,8 @@ market            | 交易币对市场名称列表  </p>
 </tr>
 </tbody></table>
 <h2 id='872ac3b1d9'>取消当日市场状态订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5158,6 +5202,8 @@ market            | 交易币对市场名称列表  </p>
 
 <p>status  是否成功</p>
 <h2 id='d02b960aac'>成交订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5188,6 +5234,8 @@ market            | 交易币对市场名称列表  </p>
 
 <p>status  是否成功</p>
 <h2 id='0ac2b13a89'>成交推送</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5210,6 +5258,8 @@ market            | 交易币对市场名称列表  </p>
 </span></code></pre>
 <p>参考deals.query的返回结果。 </p>
 <h2 id='632b7bb9a2'>取消成交订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5240,6 +5290,8 @@ market            | 交易币对市场名称列表  </p>
 
 <p>status  是否成功</p>
 <h2 id='28dd755c73'>定单深度订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5293,6 +5345,8 @@ market            | 交易币对市场名称列表  </p>
 
 <p>status  是否成功</p>
 <h2 id='00f037da9f'>定单批量深度订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5346,6 +5400,8 @@ precision   # 价格区间精度, 取值：&quot;0&quot;,&quot;0.00000001&quot;,
 
 <p>status  是否成功</p>
 <h2 id='f40b359dad'>定单深度数据推送</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5389,6 +5445,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <p>返回结果说明：
 以价格区间精度为0.1为例。</p>
 <h2 id='5e9b8fbd82'>取消定单深度订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5412,6 +5470,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <li>params: []</li>
 </ul>
 <h2 id='002efb6fa9'>用户定单状态订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5477,6 +5537,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <li>params: []</li>
 </ul>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5494,6 +5556,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='8dcc9e6423'>用户资产信息订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>
@@ -5534,6 +5598,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <li>params: []</li>
 </ul>
 <h2 id='8dcc9e6423-2'>用户资产信息订阅</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>请求:</p>
 </blockquote>

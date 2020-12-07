@@ -1,4 +1,6 @@
 <h1 id='interface-subscription-cancellation-of-interface-subscription'>Interface Subscription/Cancellation of Interface Subscription</h1><h2 id='subscription-of-market-trend'>Subscription of Market Trend</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -48,6 +50,8 @@
 
 <p>After the subscription is finished successfully, the subscribed data will be pushed to client end. Please refer to <strong>[Market Trend Push]</strong> for the content of data.</p>
 <h2 id='market-trend-push'>Market Trend Push</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -71,6 +75,8 @@
     ]
 ]</p>
 <h2 id='cancellation-of-subscription-on-market-trend'>Cancellation of Subscription on Market Trend</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -94,6 +100,8 @@
 <li>params: []</li>
 </ul>
 <h3 id='request-parameter'>Request Parameter</h3><h3 id='response-data'>Response Data</h3><h2 id='subscription-of-latest-price'>Subscription of Latest Price</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -141,6 +149,8 @@ status       | Successful or not</p>
    After the subscription is finished successfully，the data of the content will be actively pushed to client end.
 </aside>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -179,6 +189,8 @@ status       | Successful or not</p>
 <li>params: []</li>
 </ul>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -205,6 +217,8 @@ status       | Successful or not</p>
 <li>method: state.subscribe</li>
 <li>params: market</li>
 </ul>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>Request:</p>
@@ -281,6 +295,8 @@ status       | Successful or not</p>
 <h3 id='response-data-5'>Response Data</h3>
 <p>Please refer to state.query method for returned value</p>
 <h2 id='cancellation-of-push-on-market-status'>Cancellation of Push on Market Status</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -307,6 +323,8 @@ status       | Successful or not</p>
 <aside class="notice">
 Subscription on market status of the current day
 </aside>
+
+<p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
 <p>Request:</p>
@@ -432,6 +450,8 @@ Subscription on market status of the current day
 </tr>
 </tbody></table>
 <h2 id='cancellation-of-subscription-on-the-market-status-of-the-current-day'>Cancellation of Subscription on The Market Status of The Current Day</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -459,6 +479,8 @@ Subscription on market status of the current day
 <h3 id='response-data-7'>Response Data</h3>
 <p>status  Successful or not</p>
 <h2 id='subscription-on-order-settlement'>Subscription on Order Settlement</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -486,6 +508,8 @@ Subscription on market status of the current day
 <h3 id='response-data-8'>Response Data</h3>
 <p>status  Successful or not</p>
 <h2 id='push-on-order-settlement'>Push on Order Settlement</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -508,6 +532,8 @@ Subscription on market status of the current day
 </span></code></pre>
 <p>Please refer to the result returned by deals.query</p>
 <h2 id='cancellation-of-subscription-on-order-settlement'>Cancellation of Subscription on Order Settlement</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -535,6 +561,8 @@ Subscription on market status of the current day
 <h3 id='response-data-9'>Response Data</h3>
 <p>status  Successful or not</p>
 <h2 id='subscription-on-order-depth'>Subscription on Order Depth</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -584,6 +612,8 @@ Subscription on market status of the current day
 <h3 id='response-data-10'>Response Data</h3>
 <p>status  Successful or not</p>
 <h2 id='subscription-on-the-depth-of-order-in-large-quantities'>Subscription on The Depth of Order in Large Quantities</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -633,6 +663,8 @@ precision   # available precisions of price range：&quot;0&quot;,&quot;0.000000
 <h3 id='response-data-11'>Response Data</h3>
 <p>status  successful or not</p>
 <h2 id='push-of-data-on-order-depth'>Push of Data on Order Depth</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -676,6 +708,8 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <p>Description on returned result：
 Take the example of the precision of price range as 0.1</p>
 <h2 id='cancellation-of-subscription-on-order-depth'>Cancellation of Subscription on Order Depth</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -699,6 +733,8 @@ Take the example of the precision of price range as 0.1</p>
 <li>params: []</li>
 </ul>
 <h2 id='subscription-on-user-39-s-order-status'>Subscription on User&#39;s Order Status</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -764,6 +800,8 @@ Take the example of the precision of price range as 0.1</p>
 <li>params: []</li>
 </ul>
 
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -781,6 +819,8 @@ Take the example of the precision of price range as 0.1</p>
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='subscription-on-information-of-user-asset'>Subscription on Information of User Asset</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -821,6 +861,8 @@ Take the example of the precision of price range as 0.1</p>
 <li>params: []</li>
 </ul>
 <h2 id='subscription-of-information-on-user-asset'>Subscription of Information on User Asset</h2>
+<p><strong>WEBSOCKET</strong></p>
+
 <blockquote>
 <p>Request:</p>
 </blockquote>
