@@ -43,6 +43,10 @@
 </tr>
 </tbody></table>
 
+<aside class="notice">
+   assets — 空数组表示获取全部代币资产
+</aside>
+
 <p><strong>响应数据</strong></p>
 
 <blockquote>
@@ -90,7 +94,3 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-   assets — 空数组表示获取全部代币资产
-</aside>

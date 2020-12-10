@@ -30,7 +30,7 @@
 </tbody></table>
 
 <blockquote>
-<p>Response: </p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"result"</span><span class="p">:[</span><span class="w">
@@ -65,7 +65,7 @@
 <p>This interface does not accept any parameter</p>
 
 <blockquote>
-<p>Response: </p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -87,7 +87,7 @@
 <p>This interface does not accept any parameter</p>
 
 <blockquote>
-<p>Response: </p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585282798</span><span class="p">,</span><span class="w">

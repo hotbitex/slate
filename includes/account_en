@@ -47,6 +47,10 @@
 </tr>
 </tbody></table>
 
+<aside class="notice">
+   assets — Blank array means retrieve all token assets
+</aside>
+
 <p><strong>Response Data</strong></p>
 
 <blockquote>
@@ -94,107 +98,3 @@
 <td></td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-   assets — Blank array means retrieve all token assets
-</aside>
-
-<!-- 
-
-
- -->
-<h2 id='retrieve-the-records-regarding-the-changes-in-user-assets'>Retrieve The Records Regarding The Changes In User Assets</h2>
-<!-- ```Response:
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-``` -->
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>POST /balance.history</code></p>
-<h3 id='request-parameter'>Request Parameter</h3>
-<table><thead>
-<tr>
-<th>Name of Parameter</th>
-<th>Required Or Not</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>Yes</td>
-<td>string</td>
-<td>The API KEY Requested By The User</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>Yes</td>
-<td>string</td>
-<td>The signature value of the requested string</td>
-</tr>
-<tr>
-<td>asset</td>
-<td>Yes</td>
-<td>string</td>
-<td>Name of assets，For example：&quot;BTC&quot;,&quot;ETH&quot; etc.，&quot;&quot;means the names of all assets</td>
-</tr>
-<tr>
-<td>business</td>
-<td>Yes</td>
-<td>string</td>
-<td>Name of business，如：&quot;deposit&quot; or &quot;trade&quot;，&quot;&quot;means the names of all businesses</td>
-</tr>
-<tr>
-<td>start_time</td>
-<td>Yes</td>
-<td>Integer(64 digit without symbol)</td>
-<td>Starting Time(Second)</td>
-</tr>
-<tr>
-<td>end_time</td>
-<td>Yes</td>
-<td>Integer(64 digit without symbol)</td>
-<td>Ending Time(second)</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Yes</td>
-<td>Integer(32 Digit)</td>
-<td>Offset position, if set as 0, it means all transaction records starting from the latest transaction to the earliest transaction, the total number of transactions cannot be greater than limit; if set as 1, it means the number of all transaction records starting from the second latest transaction to the earliest transaction cannot be greater than limit; and so on</td>
-</tr>
-</tbody></table>
-
-<p>limit         |Yes              | Integer(32 Digit)        |Maximum number of transactions returned</p>
-<h3 id='response-data'>Response Data</h3>
-<table><thead>
-<tr>
-<th>Name of Paramter</th>
-<th>Required or Not</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>Yes</td>
-<td>string</td>
-<td>The API KEY Requested By The User</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-   assets — Blank array means retrieve all token assets
-</aside>
