@@ -1,33 +1,37 @@
-<h1 id='41654e0268'>基础信息</h1><h2 id='d4b46c1141'>资产类型和精度</h2>
-<p>此接口返回所有资产类型和精度
-<code>shell
-curl  &quot;https://api.hotbit.io/api/v2/asset.list&quot;
-</code>
-<code>json
-{
-    &quot;result&quot;:[
-        {
-            &quot;name&quot;: &quot;BTC&quot;,
-            &quot;prec&quot;: 8
-        },
-        {
-            &quot;name&quot;: &quot;ETH&quot;,
-            &quot;prec&quot;: 8
-        },
-        {
-            &quot;name&quot;: &quot;USDT&quot;,
-            &quot;prec&quot;: 8
-        },
-    ],
-    &quot;error&quot;: null,
-    &quot;id&quot;: 1585283976
-}
-</code>
-<strong>HTTP 请求</strong>
-* GET /api/v2/asset.list
-<strong>请求参数</strong>
-此接口不接受任何参数。
-<strong>返回字段</strong></p>
+<h1 id='41654e0268'>基础信息</h1><pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/asset.list"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="err">Response</span><span class="w"> 
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prec"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585283976</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='d4b46c1141'>资产类型和精度</h2>
+<p>此接口返回所有资产类型和精度</p>
+
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li>GET /api/v2/asset.list</li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<p><strong>返回字段</strong></p>
 
 <table><thead>
 <tr>
@@ -50,21 +54,27 @@ curl  &quot;https://api.hotbit.io/api/v2/asset.list&quot;
 <h2 id='67361e2961'>获取当前系统时间戳</h2>
 <p>此接口返回当前的系统时间戳。</p>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/server.time"</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre>
+<p><strong>HTTP 请求</strong></p>
+
+<ul>
+<li>GET /api/v2/server.time</li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<p>此接口不接受任何参数。</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585282798</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><strong>HTTP 请求</strong>
-* GET /api/v2/server.time
-<strong>请求参数</strong>
-此接口不接受任何参数。</p>
-
-<blockquote>
-<p>Response
-<strong>返回字段</strong></p>
-</blockquote>
+<p><strong>返回字段</strong></p>
 
 <table><thead>
 <tr>
