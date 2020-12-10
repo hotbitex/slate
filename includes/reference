@@ -1,5 +1,7 @@
 <h1 id='41654e0268'>基础信息</h1><pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/asset.list"</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="err">Response</span><span class="w"> 
+</code></pre><h2 id='d4b46c1141'>资产类型和精度</h2>
+<p>此接口返回所有资产类型和精度</p>
+<pre class="highlight json tab-json"><code><span class="err">Response</span><span class="w"> 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"result"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -18,9 +20,7 @@
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585283976</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='d4b46c1141'>资产类型和精度</h2>
-<p>此接口返回所有资产类型和精度</p>
-
+</span></code></pre>
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
