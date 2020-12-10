@@ -1176,14 +1176,13 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 </tr>
 </tbody></table>
 <h1 id='41654e0268'>基础信息</h1><h2 id='d4b46c1141'>资产类型和精度</h2>
-<p>此接口返回所有资产类型和精度</p>
-
-<blockquote>
-<p>shell
+<p>此接口返回所有资产类型和精度
 <code>shell
 curl  &quot;https://api.hotbit.io/api/v2/asset.list&quot;
-</code>
-Response
+</code></p>
+
+<blockquote>
+<p>Response
 <code>json
 {
     &quot;result&quot;:[
@@ -1230,14 +1229,13 @@ Response
 </tr>
 </tbody></table>
 <h2 id='67361e2961'>获取当前系统时间戳</h2>
-<p>此接口返回当前的系统时间戳。</p>
-
-<blockquote>
-<p>shell
+<p>此接口返回当前的系统时间戳。
 <code>shell
 curl  &quot;https://api.hotbit.io/api/v2/server.time&quot;
-</code>
-Response
+</code></p>
+
+<blockquote>
+<p>Response
 <code>json
 {
     &quot;error&quot;: null,
@@ -1259,11 +1257,9 @@ result    | int           | 当前服务器时间</p>
 <p>此接口返回获取全市场交易对的最新成交信息</p>
 
 <blockquote>
-<p>shell
-<code>shell
-curl  &quot;https://api.hotbit.io/api/v2/allticker&quot;
-</code>
-Response
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/allticker"</span>
+</code></pre>
+<p>Response
 <code>json
 {
     &quot;date&quot;: 1585282798,
@@ -1293,12 +1289,15 @@ Response
     ]
 }
 </code>
-<strong>HTTP 请求</strong>
-* GET /api/v2/v2/allticker
+<strong>HTTP 请求</strong></p>
+</blockquote>
+
+<ul>
+<li>GET /api/v2/v2/allticker
 <strong>请求参数</strong>
 此接口不接受任何参数。
-<strong>返回字段</strong></p>
-</blockquote>
+<strong>返回字段</strong></li>
+</ul>
 
 <table><thead>
 <tr>
