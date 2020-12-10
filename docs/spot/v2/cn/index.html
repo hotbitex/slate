@@ -1089,8 +1089,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <ul>
 <li>GET /api/v2/balance.query</li>
 </ul>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/balance.query?api_key=yourkey=["</span>BTC<span class="s2">","</span>ETH<span class="s2">"]&amp;sign=yoursign"</span>
-</code></pre>
+
 <p><strong>请求参数</strong></p>
 
 <table><thead>
@@ -1128,7 +1127,8 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <aside class="notice">
    assets — 空数组表示获取全部代币资产
 </aside>
-
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/balance.query?api_key=yourkey=["</span>BTC<span class="s2">","</span>ETH<span class="s2">"]&amp;sign=yoursign"</span>
+</code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
