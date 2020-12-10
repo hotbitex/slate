@@ -76,7 +76,23 @@
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585282798</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='0f90157d99'>最新成交信息</h2>
+</span></code></pre>
+<p><strong>返回字段</strong></p>
+
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>int</td>
+<td>当前服务器时间</td>
+</tr>
+</tbody></table>
+<h2 id='0f90157d99'>最新成交信息</h2>
 <p>此接口返回获取全市场交易对的最新成交信息</p>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/allticker"</span>
 </code></pre>
