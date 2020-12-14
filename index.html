@@ -552,7 +552,7 @@
                     <a href="#7355a7b1d0" class="toc-h2 toc-link" data-title="用户资产变化信息推送">用户资产变化信息推送</a>
                   </li>
                   <li>
-                    <a href="#8dcc9e6423-2" class="toc-h2 toc-link" data-title="用户资产信息订阅">用户资产信息订阅</a>
+                    <a href="#ee092f3ea8" class="toc-h2 toc-link" data-title="取消用户资产信息订阅">取消用户资产信息订阅</a>
                   </li>
               </ul>
           </li>
@@ -1376,7 +1376,8 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <ul>
 <li><code>GET /api/v2/market.list</code></li>
 </ul>
-
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.list"</span>
+</code></pre>
 <p><strong>请求参数</strong></p>
 
 <p>此接口不接受任何参数。</p>
@@ -1484,7 +1485,8 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <ul>
 <li><code>GET /api/v2/market.last</code></li>
 </ul>
-
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.last?market=ETH/BTC"</span>
+</code></pre>
 <p><strong>请求参数</strong></p>
 
 <table><thead>
@@ -1529,7 +1531,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <td>result</td>
 <td>是</td>
 <td>double</td>
-<td>下单最小值</td>
+<td>最新价格</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -1539,7 +1541,8 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <ul>
 <li><code>GET /api/v2/market.deals</code></li>
 </ul>
-
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.deals?market=ETH/BTC&amp;limit=1&amp;last_id=1"</span>
+</code></pre>
 <p><strong>请求参数</strong></p>
 
 <table><thead>
@@ -1579,7 +1582,15 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> 
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304861006</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1607310479</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.030876"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.071"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="w"> 
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169562</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1595,10 +1606,38 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 </tr>
 </thead><tbody>
 <tr>
-<td>result</td>
+<td>id</td>
 <td>是</td>
+<td>int</td>
+<td>id</td>
 <td>-</td>
-<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td>是</td>
+<td>int</td>
+<td>成交时间</td>
+<td>-</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>int</td>
+<td>成交价格</td>
+<td>-</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>int</td>
+<td>成交数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>int</td>
+<td>成交类型</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -1646,11 +1685,39 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 </tr>
 </thead><tbody>
 <tr>
-<td>result</td>
+<td>id</td>
 <td>是</td>
-<td></td>
-<td></td>
-<td></td>
+<td>int</td>
+<td>id</td>
+<td>-</td>
+</tr>
+<tr>
+<td>time</td>
+<td>是</td>
+<td>int</td>
+<td>成交时间</td>
+<td>-</td>
+</tr>
+<tr>
+<td>price</td>
+<td>是</td>
+<td>int</td>
+<td>成交价格</td>
+<td>-</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>是</td>
+<td>int</td>
+<td>成交数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>int</td>
+<td>成交类型</td>
+<td>-</td>
 </tr>
 </tbody></table>
 <h2 id='k'>k线查询</h2>
@@ -5606,7 +5673,7 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <li>method: asset.update</li>
 <li>params: []</li>
 </ul>
-<h2 id='8dcc9e6423-2'>用户资产信息订阅</h2>
+<h2 id='ee092f3ea8'>取消用户资产信息订阅</h2>
 <p><strong>WEBSOCKET</strong></p>
 
 <blockquote>

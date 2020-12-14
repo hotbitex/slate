@@ -860,7 +860,7 @@ Take the example of the precision of price range as 0.1</p>
 <li>method: asset.update</li>
 <li>params: []</li>
 </ul>
-<h2 id='subscription-of-information-on-user-asset'>Subscription of Information on User Asset</h2>
+<h2 id='unsubscription-of-information-on-user-asset'>Unsubscription of Information on User Asset</h2>
 <p><strong>WEBSOCKET</strong></p>
 
 <blockquote>

@@ -853,7 +853,7 @@ true, #clean: Boolean, true: complete result，false: last returned updated resu
 <li>method: asset.update</li>
 <li>params: []</li>
 </ul>
-<h2 id='8dcc9e6423-2'>用户资产信息订阅</h2>
+<h2 id='ee092f3ea8'>取消用户资产信息订阅</h2>
 <p><strong>WEBSOCKET</strong></p>
 
 <blockquote>
