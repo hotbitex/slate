@@ -43,7 +43,7 @@ A: 每个用户可创建5组Api Key，每个Api Key可对应设置读取、交�
 
 <p><code>api.hotbit.io\n</code></p>
 
-<p><code>/api/v2/balance.query\n</code></p>
+<p><code>/v2/p2/balance.query\n</code></p>
 
 <p><code>api_key=6b97d781-5ffd-958f-576d6d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
 
@@ -95,7 +95,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 
 <p><strong>Q1：如何获取下单数量、金额、小数限制、精度的信息？</strong></p>
 
-<p>A： 可使用 Rest API GET /api/v2/asset.list 获取相关币对信息， 下单时注意最小下单数量和最小下单金额的区别。</p>
+<p>A： 可使用 Rest API GET /v2/p2/asset.list 获取相关币对信息， 下单时注意最小下单数量和最小下单金额的区别。</p>
 <h2 id='adddf159e5'>账户重提相关</h2>
 <p><strong>Q1：为什么创建提币时返回api-not-support-temp-addr错误？</strong></p>
 

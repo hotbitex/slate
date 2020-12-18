@@ -2,9 +2,9 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.list</code></li>
+<li><code>GET /v2/p1/market.list</code></li>
 </ul>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.list"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.list"</span>
 </code></pre>
 <p><strong>请求参数</strong></p>
 
@@ -111,9 +111,9 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.last</code></li>
+<li><code>GET /v2/p1/market.last</code></li>
 </ul>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.last?market=ETH/BTC"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.last?market=ETH/BTC"</span>
 </code></pre>
 <p><strong>请求参数</strong></p>
 
@@ -167,9 +167,9 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.deals</code></li>
+<li><code>GET /v2/p1/market.deals</code></li>
 </ul>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/market.deals?market=ETH/BTC&amp;limit=1&amp;last_id=1"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.deals?market=ETH/BTC&amp;limit=1&amp;last_id=1"</span>
 </code></pre>
 <p><strong>请求参数</strong></p>
 
@@ -273,7 +273,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/market.user_deals</code></li>
+<li><code>POST /v2/p2/market.user_deals</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -352,7 +352,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.kline</code></li>
+<li><code>GET /v2/p1/market.kline</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -490,7 +490,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.status</code></li>
+<li><code>GET /v2/p1/market.status</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -610,7 +610,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.status_today</code></li>
+<li><code>GET /v2/p1/market.status_today</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -714,7 +714,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.status24h</code></li>
+<li><code>GET /v2/p1/market.status24h</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -819,7 +819,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /api/v2/market.summary</code></li>
+<li><code>GET /v2/p1/market.summary</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>

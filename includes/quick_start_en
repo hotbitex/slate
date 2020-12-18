@@ -25,87 +25,87 @@ Risk Warning：These two encrypted keys are closely related to the security of y
 </tr>
 </thead><tbody>
 <tr>
-<td><a href="#">GET /api/v2/server.time</a></td>
+<td><a href="#">GET /v2/p1/server.time</a></td>
 <td>Retrieve System Time</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/balance.query</a></td>
+<td><a href="#">POST /v2/p2/balance.query</a></td>
 <td>Retrieve User Asset</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/asset.list</a></td>
+<td><a href="#">GET /v2/p2/asset.list</a></td>
 <td>Retrieve all available asset types and asset precision, prec means the number of decimal places</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.put_limit</a></td>
+<td><a href="#">POST /v2/p2/order.put_limit</a></td>
 <td>Limit Order</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.cancel</a></td>
+<td><a href="#">POST /v2/p2/order.cancel</a></td>
 <td>Cancel Order</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.batch_cancel</a></td>
+<td><a href="#">POST /v2/p2/order.batch_cancel</a></td>
 <td>Cancel Orders in Large Quantities</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.deals</a></td>
+<td><a href="#">POST /v2/p2/order.deals</a></td>
 <td>Retrieve Details of Settled Orders</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.finished_detail</a></td>
+<td><a href="#">POST /v2/p2/order.finished_detail</a></td>
 <td>Inquiry on settled orders based on order numbers</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/order.book </a></td>
+<td><a href="#">GET /v2/p1/order.book </a></td>
 <td>Retrieve Trading List</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/order.depth</a></td>
+<td><a href="#">GET /v2/p2/order.depth</a></td>
 <td>Retrieve Trading Depth</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.pending</a></td>
+<td><a href="#">POST /v2/p2/order.pending</a></td>
 <td>Inquiry on Unexecuted Orders</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.finished</a></td>
+<td><a href="#">POST /v2/p2/order.finished</a></td>
 <td>Inquiry on User&#39;s Settled Orders</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.list</a></td>
+<td><a href="#">GET /v2/p1/market.list</a></td>
 <td>Retrieve List of Transaction Pairs</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.last</a></td>
+<td><a href="#">GET /v2/p1/market.last</a></td>
 <td>Retrieve The Latest Price of Designated Transaction Pair</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.deals</a></td>
+<td><a href="#">GET /v2/p1/market.deals</a></td>
 <td>Inquiry on Transaction Records of Transaction Pair</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.user_deals</a></td>
+<td><a href="#">GET /v2/p2/market.user_deals</a></td>
 <td>Inquiry on User&#39;s Trading Records</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.kline</a></td>
+<td><a href="#">GET /v2/p1/market.kline</a></td>
 <td>k chart inquiry</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.status</a></td>
-<td>Retrieve various real-time status of market within a designated period of time in the past, such as the latest range of increase or decrease, trading volume, maximum/minimum price etc.<a href="#">GET /api/v2/market.status_today</a></td>
+<td><a href="#">GET /v2/p1/market.status</a></td>
+<td>Retrieve various real-time status of market within a designated period of time in the past, such as the latest range of increase or decrease, trading volume, maximum/minimum price etc.<a href="#">GET /v2/p1/market.status_today</a></td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.status24h</a></td>
+<td><a href="#">GET /v2/p1/market.status24h</a></td>
 <td>Retrieve various status of market within the past 24 hours, such as range of increase or decrease, trading volume, maximum/minimum price etc.</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.summary</a></td>
+<td><a href="#">GET /v2/p1/market.summary</a></td>
 <td>market summary</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/allticker</a></td>
+<td><a href="#">GET /v2/p1/allticker</a></td>
 <td>Retrieve the latest information of all available transaction pairs</td>
 </tr>
 </tbody></table>
@@ -162,7 +162,7 @@ In order to visit certain interface, each API key is required to obtain appropri
 <p>A legal request is composed of the following sections：</p>
 
 <ul>
-<li>Method Request Address：which refers to the address of access server api.huobi.pro，for example api.hotbit.io/api/v2/order/orders。</li>
+<li>Method Request Address：which refers to the address of access server api.huobi.pro，for example api.hotbit.io/v2/p2/order/orders。</li>
 <li>API Access Id（AccessKeyId）：The Access Key included in the API Key that you applied.</li>
 <li>Signature Method（SignatureMethod）：The protocol based on md5 used for the process of calculation on user&#39;s signature, in this case, please apply md5.</li>
 <li>Signature Version（SignatureVersion）：The version of signature protocol, in this case please apply 2.</li>
@@ -174,7 +174,7 @@ In order to visit certain interface, each API key is required to obtain appropri
 <p>Standardize the request that requires signature computation. Considering the fact that during signature computation, the results of computation by using different contents will be totally different, please do standardize the request before signature computation. Please refer to the example below that demonstrates the request regarding the inquiry on the details of the order:
 The complete request URL regarding the inquiry on the details of the order</p>
 
-<p><code>https://api.hotbit.io/api/v2/balance.query?</code></p>
+<p><code>https://api.hotbit.io//v2/p2/balance.query?</code></p>
 
 <p><code>api_key=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
 
@@ -218,7 +218,7 @@ The complete request URL regarding the inquiry on the details of the order</p>
 <p>The final API request sent to the server should be</p>
 
 <p><code>POST\n</code>
-<code>https://api.hotbit.io/api/v2/balance.query?api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
+<code>https://api.hotbit.io/v2/p2/balance.query?api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]&amp;sign=C88F04701D3349D0A93A0164DC5A4CD9</code></p>
 
 <!-- 
 ## Business Dictionary

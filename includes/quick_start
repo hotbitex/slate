@@ -45,91 +45,91 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><a href="#">GET /api/v2/server.time</a></td>
+<td><a href="#">GET /v2/p1/server.time</a></td>
 <td>获取系统时间</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/balance.query</a></td>
+<td><a href="#">POST /v2/p2/balance.query</a></td>
 <td>获取用户资产</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/asset.list</a></td>
+<td><a href="#">GET /v2/p2/asset.list</a></td>
 <td>获取平台所有资产类型和精度，prec为精确到小数点后多少位</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.put_limit</a></td>
+<td><a href="#">POST /v2/p2/order.put_limit</a></td>
 <td>限价交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.cancel</a></td>
+<td><a href="#">POST /v2/p2/order.cancel</a></td>
 <td>取消交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.batch_cancel</a></td>
+<td><a href="#">POST /v2/p2/order.batch_cancel</a></td>
 <td>批量取消交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.deals</a></td>
+<td><a href="#">POST /v2/p2/order.deals</a></td>
 <td>获取已成交的订单细节</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.finished_detail</a></td>
+<td><a href="#">POST /v2/p2/order.finished_detail</a></td>
 <td>根据订单号查询已完成订单</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/order.book </a></td>
+<td><a href="#">GET /v2/p2/order.book </a></td>
 <td>获取交易列表</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/order.depth</a></td>
+<td><a href="#">GET /v2/p2/order.depth</a></td>
 <td>获取交易深度</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.pending</a></td>
+<td><a href="#">POST /v2/p2/order.pending</a></td>
 <td>查询未实施订单</td>
 </tr>
 <tr>
-<td><a href="#">POST /api/v2/order.finished</a></td>
+<td><a href="#">POST /v2/p2/order.finished</a></td>
 <td>查询用户的已完成订单</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.list</a></td>
+<td><a href="#">GET /v2/p1/market.list</a></td>
 <td>获取交易对列表</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.last</a></td>
+<td><a href="#">GET /v2/p1/market.last</a></td>
 <td>获取指定交易对的最新价格</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.deals</a></td>
+<td><a href="#">GET /v2/p1/market.deals</a></td>
 <td>查询交易对交易记录</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.user_deals</a></td>
+<td><a href="#">GET /v2/p2/market.user_deals</a></td>
 <td>查询用户交易记录</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.kline</a></td>
+<td><a href="#">GET /v2/p1/market.kline</a></td>
 <td>k线查询</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.status</a></td>
+<td><a href="#">GET /v2/p1/market.status</a></td>
 <td>获取过去指定时间段market当前最新涨跌幅，交易量，最高/最低价格等状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.status_today</a></td>
+<td><a href="#">GET /v2/p1/market.status_today</a></td>
 <td>获取今天market状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.status24h</a></td>
+<td><a href="#">GET /v2/p1/market.status24h</a></td>
 <td>获取过去24小时内的market涨跌幅，交易量，最高/最低价格等状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/market.summary</a></td>
+<td><a href="#">GET /v2/p1/market.summary</a></td>
 <td>market概要</td>
 </tr>
 <tr>
-<td><a href="#">GET /api/v2/allticker</a></td>
+<td><a href="#">GET /v2/p1/allticker</a></td>
 <td>获取全市场交易对的最新成交信息</td>
 </tr>
 </tbody></table>
@@ -160,7 +160,8 @@
 
 <p><strong>REST API</strong></p>
 
-<p><strong><code>https://api.hotbit.io/api/v2</code></strong></p>
+<p><strong><code>https://api.hotbit.io/v2/p1/</code></strong>
+<strong><code>https://api.hotbit.io/v2/p2/</code></strong></p>
 
 <p><strong>Websocket Feed</strong></p>
 

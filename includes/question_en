@@ -39,7 +39,7 @@ Please refer to the detailed information of the three permissions below：
 
 <p><code>api.hotbit.io\n</code></p>
 
-<p><code>/api/v2/balance.query\n</code></p>
+<p><code>/v2/p2/balance.query\n</code></p>
 
 <p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
 
@@ -83,4 +83,4 @@ Please refer to the detailed information of the three permissions below：
 <h2 id='trading-related-information'>Trading Related Information</h2>
 <p><strong>Q1：How to Retrieve The Information Regarding The Number, Value, Limit on Decimal Places and Precision of Orders Placed</strong></p>
 
-<p>A： You may use Rest API GET /api/v2/asset.list to retrieve information on relevant transaction pair. By placing orders, please pay attention to the difference between minimum volume of order placement allowed and minimum value of order placement allowed. </p>
+<p>A： You may use Rest API GET /v2/p2/asset.list to retrieve information on relevant transaction pair. By placing orders, please pay attention to the difference between minimum volume of order placement allowed and minimum value of order placement allowed. </p>

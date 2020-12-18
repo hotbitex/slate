@@ -8,22 +8,22 @@
 </thead><tbody>
 <tr>
 <td>System Type</td>
-<td>/api/v2/server.time</td>
+<td>/v2/p1/server.time</td>
 <td>Basic Types of Interface</td>
 </tr>
 <tr>
 <td>Order Type</td>
-<td>/api/v2/order.*</td>
+<td>/v2/p2/order.*</td>
 <td>Order type of interface, which include order placement, order cancellation, order inquiry and order settlement etc.</td>
 </tr>
 <tr>
 <td>Market Type</td>
-<td>/api/v2/market.*</td>
+<td>/v2/p1/market.*</td>
 <td>Public market type of interface, which include market settlement, market depth, market trends etc.</td>
 </tr>
 <tr>
 <td>Asset Type</td>
-<td>/api/v2/balance.*</td>
+<td>/v2/p2/balance.*</td>
 <td>Asset type of interface, which include records of changes in asset volumes and user assets.</td>
 </tr>
 </tbody></table>

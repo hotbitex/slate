@@ -2,7 +2,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.put_limit</code></li>
+<li><code>POST /v2/p2/order.put_limit</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -233,7 +233,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.cancel</code></li>
+<li><code>POST /v2/p2/order.cancel</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -443,7 +443,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.batch_cancel</code></li>
+<li><code>POST /v2/p2/order.batch_cancel</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -659,7 +659,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.deals</code></li>
+<li><code>POST /v2/p2/order.deals</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -880,7 +880,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.finished_detail</code></li>
+<li><code>POST /v2/p2/order.finished_detail</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1091,7 +1091,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.book</code></li>
+<li><code>POST /v2/p2/order.book</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1197,7 +1197,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.depth</code></li>
+<li><code>POST /v2/p2/order.depth</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1257,7 +1257,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.pending</code></li>
+<li><code>POST /v2/p2/order.pending</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1387,7 +1387,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /api/v2/order.finished</code></li>
+<li><code>POST /v2/p2/order.finished</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>

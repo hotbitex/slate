@@ -4,7 +4,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /api/v2/asset.list</li>
+<li>GET /v2/p2/asset.list</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/asset.list"</span>
 </code></pre>
@@ -52,12 +52,12 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='retrieve-the-timestamp-of-current-system'>Retrieve The Timestamp of Current System</h2>
 <p>This interface returns the timestamp of current system.</p>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/server.time"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/server.time"</span>
 </code></pre>
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /api/v2/server.time</li>
+<li>GET /v2/p1/server.time</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -74,7 +74,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='latest-information-of-order-settlement'>Latest Information Of Order Settlement</h2>
 <p>This interface returns the latest order settlement information of all transaction pairs retrieved</p>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/allticker"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/allticker"</span>
 </code></pre>
 <p><strong>HTTP Request</strong></p>
 
