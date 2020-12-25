@@ -6,7 +6,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /api/v2/balance.query</li>
+<li>GET /v2/p2/balance.query</li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -46,7 +46,7 @@
 <aside class="notice">
    assets — 空数组表示获取全部代币资产
 </aside>
-<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/api/v2/balance.query?api_key=yourkey=["</span>BTC<span class="s2">","</span>ETH<span class="s2">"]&amp;sign=yoursign"</span>
+<pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p2/balance.query?api_key=yourkey=["</span>BTC<span class="s2">","</span>ETH<span class="s2">"]&amp;sign=yoursign"</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
