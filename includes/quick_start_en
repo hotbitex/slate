@@ -174,7 +174,7 @@ In order to visit certain interface, each API key is required to obtain appropri
 <p>Standardize the request that requires signature computation. Considering the fact that during signature computation, the results of computation by using different contents will be totally different, please do standardize the request before signature computation. Please refer to the example below that demonstrates the request regarding the inquiry on the details of the order:
 The complete request URL regarding the inquiry on the details of the order</p>
 
-<p><code>https://api.hotbit.io//v2/p2/balance.query?</code></p>
+<p><code>https://api.hotbit.io/v2/p2/balance.query?</code></p>
 
 <p><code>api_key=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
 
