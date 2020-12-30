@@ -136,8 +136,8 @@ Other interfaces unavailable，if attempt to visit，the system will return “e
 
 <p><strong>REST API</strong></p>
 
-<p><strong><code>https://api.hotbit.io/api/v2</code></strong>
-<strong><code>https://api.hotbitcn.com/api/v2</code></strong></p>
+<p><strong><code>https://api.hotbit.io/v2</code></strong>
+<strong><code>https://api.hotbitcn.com/v2</code></strong></p>
 
 <p><strong>Websocket Feed</strong></p>
 

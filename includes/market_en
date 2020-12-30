@@ -2,7 +2,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.list</code></li>
+<li><code>GET /p1/market.list</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -94,7 +94,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p1/market.last</code></li>
+<li><code>POST /p1/market.last</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -145,7 +145,7 @@
 <p>_<em>HTTP _Request</em></p>
 
 <ul>
-<li><code>POST /v2/p1/market.deals</code></li>
+<li><code>POST /p1/market.deals</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -208,7 +208,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/market.user_deals</code></li>
+<li><code>POST /p2/market.user_deals</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -289,7 +289,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.kline</code></li>
+<li><code>GET /p1/market.kline</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -413,7 +413,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status</code></li>
+<li><code>GET /p1/market.status</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -521,7 +521,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status_today</code></li>
+<li><code>GET /p1/market.status_today</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -615,7 +615,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status24h</code></li>
+<li><code>GET /p1/market.status24h</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -711,7 +711,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.summary</code></li>
+<li><code>GET /p1/market.summary</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>

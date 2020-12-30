@@ -652,91 +652,91 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><a href="#">GET /v2/p1/server.time</a></td>
+<td><a href="#">GET p1/server.time</a></td>
 <td>获取系统时间</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/balance.query</a></td>
+<td><a href="#">POST p2/balance.query</a></td>
 <td>获取用户资产</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p2/asset.list</a></td>
+<td><a href="#">GET p2/asset.list</a></td>
 <td>获取平台所有资产类型和精度，prec为精确到小数点后多少位</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.put_limit</a></td>
+<td><a href="#">POST p2/order.put_limit</a></td>
 <td>限价交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.cancel</a></td>
+<td><a href="#">POST p2/order.cancel</a></td>
 <td>取消交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.batch_cancel</a></td>
+<td><a href="#">POST p2/order.batch_cancel</a></td>
 <td>批量取消交易</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.deals</a></td>
+<td><a href="#">POST p2/order.deals</a></td>
 <td>获取已成交的订单细节</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.finished_detail</a></td>
+<td><a href="#">POST p2/order.finished_detail</a></td>
 <td>根据订单号查询已完成订单</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p2/order.book </a></td>
+<td><a href="#">GET p2/order.book </a></td>
 <td>获取交易列表</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p2/order.depth</a></td>
+<td><a href="#">GET p2/order.depth</a></td>
 <td>获取交易深度</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.pending</a></td>
+<td><a href="#">POST p2/order.pending</a></td>
 <td>查询未实施订单</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.finished</a></td>
+<td><a href="#">POST p2/order.finished</a></td>
 <td>查询用户的已完成订单</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.list</a></td>
+<td><a href="#">GET p1/market.list</a></td>
 <td>获取交易对列表</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.last</a></td>
+<td><a href="#">GET p1/market.last</a></td>
 <td>获取指定交易对的最新价格</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.deals</a></td>
+<td><a href="#">GET p1/market.deals</a></td>
 <td>查询交易对交易记录</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p2/market.user_deals</a></td>
+<td><a href="#">GET p2/market.user_deals</a></td>
 <td>查询用户交易记录</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.kline</a></td>
+<td><a href="#">GET p1/market.kline</a></td>
 <td>k线查询</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.status</a></td>
+<td><a href="#">GET p1/market.status</a></td>
 <td>获取过去指定时间段market当前最新涨跌幅，交易量，最高/最低价格等状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.status_today</a></td>
+<td><a href="#">GET p1/market.status_today</a></td>
 <td>获取今天market状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.status24h</a></td>
+<td><a href="#">GET p1/market.status24h</a></td>
 <td>获取过去24小时内的market涨跌幅，交易量，最高/最低价格等状态</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/market.summary</a></td>
+<td><a href="#">GET p1/market.summary</a></td>
 <td>market概要</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p1/allticker</a></td>
+<td><a href="#">GET p1/allticker</a></td>
 <td>获取全市场交易对的最新成交信息</td>
 </tr>
 </tbody></table>
@@ -763,7 +763,7 @@
 
 <p>私有接口可用于交易管理和账户管理。每个私有请求必须使用您的API Key进行签名验证。</p>
 <h2 id='urls'>接入URLs</h2>
-<p>您可以自行比较使用api.hotbit.io/api/v2和ws.hotbit.io/v2两个域名的延迟情况，选择延迟低的进行使用。</p>
+<p>您可以自行比较使用api.hotbit.io/v2和ws.hotbit.io/v2两个域名的延迟情况，选择延迟低的进行使用。</p>
 
 <p><strong>REST API</strong></p>
 
@@ -973,7 +973,7 @@ A: 每个用户可创建5组Api Key，每个Api Key可对应设置读取、交�
 
 <ol>
 <li><p>客户端服务器如在中国大陆境内，连接的稳定性很难保证，建议使用新加坡AWS云服务器进行访问。</p></li>
-<li><p>域名建议使用   api.hotbit.io/api/v2，ws.hotbit.io/v2 其他不建议使用。</p></li>
+<li><p>域名建议使用   api.hotbit.io/v2，ws.hotbit.io/v2 其他不建议使用。</p></li>
 </ol>
 
 <p><strong>Q2：为什么WebSocket总是断开连接？</strong></p>
@@ -995,7 +995,7 @@ A: 每个用户可创建5组Api Key，每个Api Key可对应设置读取、交�
 
 <p><code>api.hotbit.io\n</code></p>
 
-<p><code>/v2/p2/balance.query\n</code></p>
+<p><code>/p2/balance.query\n</code></p>
 
 <p><code>api_key=6b97d781-5ffd-958f-576d6d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
 
@@ -1047,7 +1047,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 
 <p><strong>Q1：如何获取下单数量、金额、小数限制、精度的信息？</strong></p>
 
-<p>A： 可使用 Rest API GET /v2/p2/asset.list 获取相关币对信息， 下单时注意最小下单数量和最小下单金额的区别。</p>
+<p>A： 可使用 Rest API GET /p2/asset.list 获取相关币对信息， 下单时注意最小下单数量和最小下单金额的区别。</p>
 <h2 id='adddf159e5'>账户重提相关</h2>
 <p><strong>Q1：为什么创建提币时返回api-not-support-temp-addr错误？</strong></p>
 
@@ -1088,7 +1088,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p2/balance.query</li>
+<li>GET /p2/balance.query</li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1183,7 +1183,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p2/asset.list</li>
+<li>GET /p2/asset.list</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/asset.list"</span>
 </code></pre>
@@ -1239,7 +1239,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p1/server.time</li>
+<li>GET /p1/server.time</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/server.time"</span>
 </code></pre>
@@ -1277,7 +1277,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p1/allticker</li>
+<li>GET /p1/allticker</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/allticker"</span>
 </code></pre>
@@ -1375,7 +1375,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.list</code></li>
+<li><code>GET /p1/market.list</code></li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.list"</span>
 </code></pre>
@@ -1484,7 +1484,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.last</code></li>
+<li><code>GET /p1/market.last</code></li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.last?market=ETH/BTC"</span>
 </code></pre>
@@ -1540,7 +1540,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.deals</code></li>
+<li><code>GET /p1/market.deals</code></li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/market.deals?market=ETH/BTC&amp;limit=1&amp;last_id=1"</span>
 </code></pre>
@@ -1646,7 +1646,7 @@ A： client-order-id作为下单请求标识的一个参数，类型为字符串
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/market.user_deals</code></li>
+<li><code>POST /p2/market.user_deals</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1725,7 +1725,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.kline</code></li>
+<li><code>GET /p1/market.kline</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1863,7 +1863,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status</code></li>
+<li><code>GET /p1/market.status</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -1983,7 +1983,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status_today</code></li>
+<li><code>GET /p1/market.status_today</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2087,7 +2087,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status24h</code></li>
+<li><code>GET /p1/market.status24h</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2192,7 +2192,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.summary</code></li>
+<li><code>GET /p1/market.summary</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2282,7 +2282,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.put_limit</code></li>
+<li><code>POST /p2/order.put_limit</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2513,7 +2513,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.cancel</code></li>
+<li><code>POST /p2/order.cancel</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2723,7 +2723,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.batch_cancel</code></li>
+<li><code>POST /p2/order.batch_cancel</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -2939,7 +2939,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.deals</code></li>
+<li><code>POST /p2/order.deals</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3160,7 +3160,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.finished_detail</code></li>
+<li><code>POST /p2/order.finished_detail</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3371,7 +3371,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.book</code></li>
+<li><code>POST /p2/order.book</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3477,7 +3477,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.depth</code></li>
+<li><code>POST /p2/order.depth</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3537,7 +3537,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.pending</code></li>
+<li><code>POST /p2/order.pending</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3667,7 +3667,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.finished</code></li>
+<li><code>POST /p2/order.finished</code></li>
 </ul>
 
 <p><strong>请求参数</strong></p>
@@ -3900,7 +3900,7 @@ limit   |是        | Integer(无符号64位)  |查询个数限制    | 0，1，
 
 <p><strong>响应数据</strong></p>
 
-<p>参照 /v2/p1/market.kline`</p>
+<p>参照 /p1/market.kline`</p>
 <h2 id='5ffad1afad'>最新价格查询</h2>
 <p><strong>WEBSOCKET</strong></p>
 

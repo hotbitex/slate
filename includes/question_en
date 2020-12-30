@@ -17,7 +17,7 @@ Please refer to the detailed information of the three permissions below：
 
 <ol>
 <li>If the client end server is located in mainland China, the stability of connection is hard to be guaranteed. It is recommended to use the AWS cloud server located in Singapore instead. </li>
-<li>It is recommended to use the domain name of api.hotbit.io/api/v2 and ws.hotbit.io/v2 All other domain names are not recommended.</li>
+<li>It is recommended to use the domain name of api.hotbit.io/v2 and ws.hotbit.io/v2 All other domain names are not recommended.</li>
 </ol>
 
 <p><strong>Q2：Why WebSocket has always been disconnected?</strong></p>
@@ -39,7 +39,7 @@ Please refer to the detailed information of the three permissions below：
 
 <p><code>api.hotbit.io\n</code></p>
 
-<p><code>/v2/p2/balance.query\n</code></p>
+<p><code>/p2/balance.query\n</code></p>
 
 <p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
 

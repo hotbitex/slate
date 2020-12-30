@@ -744,8 +744,8 @@ Other interfaces unavailable，if attempt to visit，the system will return “e
 
 <p><strong>REST API</strong></p>
 
-<p><strong><code>https://api.hotbit.io/api/v2</code></strong>
-<strong><code>https://api.hotbitcn.com/api/v2</code></strong></p>
+<p><strong><code>https://api.hotbit.io/v2</code></strong>
+<strong><code>https://api.hotbitcn.com/v2</code></strong></p>
 
 <p><strong>Websocket Feed</strong></p>
 
@@ -989,7 +989,7 @@ Please refer to the detailed information of the three permissions below：
 
 <ol>
 <li>If the client end server is located in mainland China, the stability of connection is hard to be guaranteed. It is recommended to use the AWS cloud server located in Singapore instead. </li>
-<li>It is recommended to use the domain name of api.hotbit.io/api/v2 and ws.hotbit.io/v2 All other domain names are not recommended.</li>
+<li>It is recommended to use the domain name of api.hotbit.io/v2 and ws.hotbit.io/v2 All other domain names are not recommended.</li>
 </ol>
 
 <p><strong>Q2：Why WebSocket has always been disconnected?</strong></p>
@@ -1011,7 +1011,7 @@ Please refer to the detailed information of the three permissions below：
 
 <p><code>api.hotbit.io\n</code></p>
 
-<p><code>/v2/p2/balance.query\n</code></p>
+<p><code>/p2/balance.query\n</code></p>
 
 <p><code>api_key=6b97d781-5ffd-958f-576d96d0bbebc8c6&amp;assets=[&quot;BTC&quot;,&quot;ETH&quot;]</code></p>
 
@@ -1064,7 +1064,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p2/balance.query</li>
+<li>GET /p2/balance.query</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1162,7 +1162,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p2/asset.list</li>
+<li>GET /p2/asset.list</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/asset.list"</span>
 </code></pre>
@@ -1215,7 +1215,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p1/server.time</li>
+<li>GET /p1/server.time</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1237,7 +1237,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /api/v2/allticker</li>
+<li>GET /p1/allticker</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1334,7 +1334,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.list</code></li>
+<li><code>GET /p1/market.list</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1426,7 +1426,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p1/market.last</code></li>
+<li><code>POST /p1/market.last</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1477,7 +1477,7 @@ Please refer to the detailed information of the three permissions below：
 <p>_<em>HTTP _Request</em></p>
 
 <ul>
-<li><code>POST /v2/p1/market.deals</code></li>
+<li><code>POST /p1/market.deals</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1540,7 +1540,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/market.user_deals</code></li>
+<li><code>POST /p2/market.user_deals</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1621,7 +1621,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.kline</code></li>
+<li><code>GET /p1/market.kline</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1745,7 +1745,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status</code></li>
+<li><code>GET /p1/market.status</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1853,7 +1853,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status_today</code></li>
+<li><code>GET /p1/market.status_today</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -1947,7 +1947,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.status24h</code></li>
+<li><code>GET /p1/market.status24h</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2043,7 +2043,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>GET /v2/p1/market.summary</code></li>
+<li><code>GET /p1/market.summary</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2103,7 +2103,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.put_limit</code></li>
+<li><code>POST /p2/order.put_limit</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2326,7 +2326,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.cancel</code></li>
+<li><code>POST /p2/order.cancel</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2531,7 +2531,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.batch_cancel</code></li>
+<li><code>POST /p2/order.batch_cancel</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2742,7 +2742,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.deals</code></li>
+<li><code>POST /p2/order.deals</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -2963,7 +2963,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.finished_detail</code></li>
+<li><code>POST /p2/order.finished_detail</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -3174,7 +3174,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.book</code></li>
+<li><code>POST /p2/order.book</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -3280,7 +3280,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.depth</code></li>
+<li><code>POST /p2/order.depth</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -3340,7 +3340,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.pending</code></li>
+<li><code>POST /p2/order.pending</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -3470,7 +3470,7 @@ Please refer to the detailed information of the three permissions below：
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /v2/p2/order.finished</code></li>
+<li><code>POST /p2/order.finished</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>

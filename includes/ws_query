@@ -73,7 +73,7 @@
 
 <p><strong>响应数据</strong></p>
 
-<p>参照 /v2/p1/market.kline`</p>
+<p>参照 /p1/market.kline`</p>
 <h2 id='5ffad1afad'>最新价格查询</h2>
 <p><strong>WEBSOCKET</strong></p>
 

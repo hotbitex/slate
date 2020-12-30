@@ -4,7 +4,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p2/asset.list</li>
+<li>GET /p2/asset.list</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/asset.list"</span>
 </code></pre>
@@ -57,7 +57,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p1/server.time</li>
+<li>GET /p1/server.time</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
@@ -79,7 +79,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /api/v2/allticker</li>
+<li>GET /p1/allticker</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>

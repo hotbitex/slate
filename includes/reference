@@ -4,7 +4,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p2/asset.list</li>
+<li>GET /p2/asset.list</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/asset.list"</span>
 </code></pre>
@@ -60,7 +60,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p1/server.time</li>
+<li>GET /p1/server.time</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/server.time"</span>
 </code></pre>
@@ -98,7 +98,7 @@
 <p><strong>HTTP 请求</strong></p>
 
 <ul>
-<li>GET /v2/p1/allticker</li>
+<li>GET /p1/allticker</li>
 </ul>
 <pre class="highlight shell tab-shell"><code>curl  <span class="s2">"https://api.hotbit.io/v2/p1/allticker"</span>
 </code></pre>

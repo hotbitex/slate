@@ -6,7 +6,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li>GET /v2/p2/balance.query</li>
+<li>GET /p2/balance.query</li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>
