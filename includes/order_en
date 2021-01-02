@@ -426,217 +426,90 @@
 <td>#he Volume Deducted as Discount</td>
 </tr>
 </tbody></table>
-<h2 id='batch-cancellation-of-orders'>Batch Cancellation of Orders</h2>
-<p><strong>HTTP Request</strong></p>
 
-<ul>
-<li><code>POST /p2/order.batch_cancel</code></li>
-</ul>
+<!-- 
 
-<p><strong>Request Parameter</strong></p>
 
-<table><thead>
-<tr>
-<th>Name of Parameter</th>
-<th>Required or Not</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>Yes</td>
-<td>string</td>
-<td>User&#39;s API KEY</td>
-</tr>
-<tr>
-<td>sign</td>
-<td>Yes</td>
-<td>string</td>
-<td>User&#39;s Signature Value</td>
-</tr>
-<tr>
-<td>market</td>
-<td>Yes</td>
-<td>string</td>
-<td>market name，for example：&quot;BTC/USDT&quot;,&quot;ETH/USDT&quot;</td>
-</tr>
-<tr>
-<td>order_id</td>
-<td>Yes</td>
-<td>Integer(No Symbol 64 Digit)</td>
-<td>The id that requires the cancellation of orders (No Symbol 64 Digit)</td>
-</tr>
-</tbody></table>
+## Batch Cancellation of Orders
 
-<blockquote>
-<p>Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> 
-   </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8688803</span><span class="p">,</span><span class="w">    
-          </span><span class="s2">"market"</span><span class="p">:</span><span class="s2">"ETHBTC"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">,</span><span class="w">    
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">        
-          </span><span class="s2">"side"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">        
-          </span><span class="s2">"user"</span><span class="p">:</span><span class="mi">15731</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"ctime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
-          </span><span class="s2">"mtime"</span><span class="p">:</span><span class="mf">1526971722.164765</span><span class="p">,</span><span class="w"> 
-          </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"0.080003"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"deal_stock"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"deal_money"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"deal_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">    </span><span class="p">,</span><span class="w"> 
-          </span><span class="s2">"fee_stock"</span><span class="p">:</span><span class="s2">"HTB"</span><span class="p">,</span><span class="w">  
-          </span><span class="s2">"alt_fee"</span><span class="p">:</span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">  
-           </span><span class="s2">"deal_fee_alt"</span><span class="p">:</span><span class="s2">"0.123"</span><span class="w"> 
-        </span><span class="p">}</span><span class="w">
-   </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1521169460</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><strong>Response Data</strong></p>
 
-<table><thead>
-<tr>
-<th>Name of Parameter</th>
-<th>Required or Not</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>Yes</td>
-<td>Integer(No Symbol 64 Digit）</td>
-<td>order-ID</td>
-</tr>
-<tr>
-<td>market</td>
-<td>Yes</td>
-<td>string</td>
-<td>Transaction Pair</td>
-</tr>
-<tr>
-<td>source</td>
-<td>Yes</td>
-<td>string</td>
-<td>Identifier on source of data request</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Yes</td>
-<td>string</td>
-<td>Order placement type 1-limit order</td>
-</tr>
-<tr>
-<td>side</td>
-<td>Yes</td>
-<td>string</td>
-<td>Identifier of buyer and seller 1-seller，2-buyer</td>
-</tr>
-<tr>
-<td>user</td>
-<td>Yes</td>
-<td>Integer(No Symbol 64 Digit）</td>
-<td>Identifier of buyer and seller 1-seller，2-buyer</td>
-</tr>
-<tr>
-<td>ctime</td>
-<td>Yes</td>
-<td>double</td>
-<td>#Time of order creation(second)</td>
-</tr>
-<tr>
-<td>mtime</td>
-<td>Yes</td>
-<td>double</td>
-<td>#Time of order update(second)</td>
-</tr>
-<tr>
-<td>price</td>
-<td>Yes</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>amount</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>taker_fee</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>maker_fee</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>left</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>deal_stock</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>deal_money</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>deal_fee</td>
-<td>Yes</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>status</td>
-<td>Yes</td>
-<td>string</td>
-<td>#Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.</td>
-</tr>
-<tr>
-<td>fee_stock</td>
-<td>Yes</td>
-<td>string</td>
-<td>#Name of Discount Token</td>
-</tr>
-<tr>
-<td>alt_fee</td>
-<td>Yes</td>
-<td>string</td>
-<td>#The discount applied to the discount token</td>
-</tr>
-<tr>
-<td>deal_fee_alt</td>
-<td>Yes</td>
-<td>string</td>
-<td>#The volume deducted as discount</td>
-</tr>
-</tbody></table>
+__HTTP Request__
 
+* `POST /p2/order.batch_cancel`
+
+__Request Parameter__
+
+Name of Parameter       | Required or Not        | Type                       |Description
+---------     | -------        | ----                      |------
+api_key       |Yes              | string                    |User's API KEY
+sign          |Yes              | string                    |User's Signature Value
+market        |Yes              | string                    |market name，for example："BTC/USDT","ETH/USDT"
+order_id      |Yes              | Integer(No Symbol 64 Digit)        |The id that requires the cancellation of orders (No Symbol 64 Digit)
+
+>Response:
+
+```json
+{
+    "error": null,
+    "result": 
+   [
+        {
+          "id":8688803,    
+          "market":"ETHBTC",
+          "source":"web",    
+          "type":1,        
+          "side":2,        
+          "user":15731,
+          "ctime":1526971722.164765, 
+          "mtime":1526971722.164765, 
+          "price":"0.080003",
+          "amount":"0.4",
+          "taker_fee":"0.0025",
+          "maker_fee":"0",
+          "left":"0.4",
+          "deal_stock":"0",
+          "deal_money":"0",
+          "deal_fee":"0",
+          "status":0    , 
+          "fee_stock":"HTB",  
+          "alt_fee":"0.5",  
+           "deal_fee_alt":"0.123" 
+        }
+   ],
+    "id": 1521169460
+}
+```
+
+
+__Response Data__
+
+
+Name of Parameter           | Required or Not          | Type                  |  Description
+---------         | -------         | ----                 |------
+id                | Yes              | Integer(No Symbol 64 Digit）   | order-ID
+market            | Yes              | string               | Transaction Pair
+source            | Yes              | string               | Identifier on source of data request
+type              | Yes              | string               | Order placement type 1-limit order
+side              | Yes              | string               | Identifier of buyer and seller 1-seller，2-buyer
+user              | Yes              | Integer(No Symbol 64 Digit）   | Identifier of buyer and seller 1-seller，2-buyer
+ctime             | Yes              | double               | #Time of order creation(second)
+mtime             | Yes              | double               | #Time of order update(second)
+price             | Yes              | double               | 
+amount            | Yes              | string               | 
+taker_fee         | Yes              | string               | 
+maker_fee         | Yes              | string               | 
+left              | Yes              | string               | 
+deal_stock        | Yes              | string               | 
+deal_money        | Yes              | string               | 
+deal_fee          | Yes              | string               | 
+status            | Yes              | string               | #Identifier of order status When true with 0x8, it means the current order is cancelled, when true with 0x80, it means the current order enjoys discount.
+fee_stock         | Yes              | string               | #Name of Discount Token
+alt_fee           | Yes              | string               | #The discount applied to the discount token
+deal_fee_alt      | Yes              | string               | #The volume deducted as discount
 <aside class="notice">
      Only a maximum of 10 orders are allowed to be cancelled
 </aside>
+ -->
 <h2 id='retrieve-the-details-of-settled-orders'>Retrieve The Details of Settled Orders</h2>
 <p><strong>HTTP Request</strong></p>
 
@@ -1179,7 +1052,7 @@
 <p><strong>HTTP Request</strong></p>
 
 <ul>
-<li><code>POST /p2/order.depth</code></li>
+<li><code>POST /p1/order.depth</code></li>
 </ul>
 
 <p><strong>Request Parameter</strong></p>

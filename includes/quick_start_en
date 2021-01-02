@@ -45,8 +45,8 @@ Risk Warning：These two encrypted keys are closely related to the security of y
 <td>Cancel Order</td>
 </tr>
 <tr>
-<td><a href="#">POST /v2/p2/order.batch_cancel</a></td>
-<td>Cancel Orders in Large Quantities</td>
+<td>&lt;!-- <a href="#">POST /v2/p2/order.batch_cancel</a></td>
+<td>Cancel Orders in Large Quantities --&gt;</td>
 </tr>
 <tr>
 <td><a href="#">POST /v2/p2/order.deals</a></td>
@@ -61,7 +61,7 @@ Risk Warning：These two encrypted keys are closely related to the security of y
 <td>Retrieve Trading List</td>
 </tr>
 <tr>
-<td><a href="#">GET /v2/p2/order.depth</a></td>
+<td><a href="#">GET /v2/p1/order.depth</a></td>
 <td>Retrieve Trading Depth</td>
 </tr>
 <tr>

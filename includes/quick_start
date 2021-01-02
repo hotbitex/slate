@@ -65,8 +65,8 @@
 <td>取消交易</td>
 </tr>
 <tr>
-<td><a href="#">POST p2/order.batch_cancel</a></td>
-<td>批量取消交易</td>
+<td>&lt;!-- <a href="#">POST p2/order.batch_cancel</a></td>
+<td>批量取消交易 --&gt;</td>
 </tr>
 <tr>
 <td><a href="#">POST p2/order.deals</a></td>
@@ -81,7 +81,7 @@
 <td>获取交易列表</td>
 </tr>
 <tr>
-<td><a href="#">GET p2/order.depth</a></td>
+<td><a href="#">GET p1/order.depth</a></td>
 <td>获取交易深度</td>
 </tr>
 <tr>
