@@ -136,13 +136,12 @@ Other interfaces unavailable，if attempt to visit，the system will return “e
 
 <p><strong>REST API</strong></p>
 
-<p><strong><code>https://api.hotbit.io/v2</code></strong>
-<strong><code>https://api.hotbitcn.com/v2</code></strong></p>
+<p><strong><code>https://api.hotbit.io/v2/p1/</code></strong>
+<strong><code>https://api.hotbit.io/v2/p2/</code></strong></p>
 
 <p><strong>Websocket Feed</strong></p>
 
-<p><strong><code>wss://ws.hotbit.io/v2/</code></strong> 
-<strong><code>wss://ws.hotbitcn.com/v2/</code></strong> </p>
+<p><strong><code>wss://ws.hotbit.io/v2/</code></strong> </p>
 
 <aside class="notice">
 Please visit Hotbit API through any IP address outside of mainland China.
